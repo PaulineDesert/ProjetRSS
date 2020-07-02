@@ -116,8 +116,10 @@ if (isset($_POST['gear'])) {
             </div>
             </select>
           </div>
-          <button type="submit" class="btn btn-dark mb-2 mx-auto d-block mt-5">Modifier</button>
-          <span><a href="index.php" class="btn btn-dark mb-2">Retour</a></span>
+          <div class="text-center">
+          <button type="submit" class="btn btn-dark mb-2 mt-5">Modifier</button>
+          <span><a href="index.php" class="btn btn-dark mt-5 mb-2">Retour</a></span>
+          </div>
         </form>
       </div>
 
