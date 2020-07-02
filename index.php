@@ -1,7 +1,10 @@
 <?php 
-
-$actu = simplexml_load_file('https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/');
-
+$actuRSS = simplexml_load_file("https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/");
+$fileRSS = simplexml_load_file("https://www.01net.com/rss/actualite/");
+$appsRSS = simplexml_load_file("https://www.01net.com/rss/actualites/applis-logiciels/");
+$securityRSS = simplexml_load_file("https://www.01net.com/rss/actualites/securite/");
+$pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
+var_dump($actuRSS);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -19,8 +22,11 @@ $actu = simplexml_load_file('https://www.01net.com/rss/info/flux-rss/flux-toutes
 
 <body>
   <!-- =========================================== header -->
-  <header class="container-fluid">
-    <div>
+  <header class="container-fluid" id="img-accueil">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 py-5">
+        <h1 class="title-accueil"><b>Super RSS Reader</b></h1>
+      </div>
     </div>
   </header>
   <!-- =========================================== navbar -->
@@ -91,11 +97,26 @@ $actu = simplexml_load_file('https://www.01net.com/rss/info/flux-rss/flux-toutes
 </section>
 
     <p>Contenu here</p>
+  <main class="mainarea">
+      <div class="container">
+          <div class="row justify-content-around">
+              <div class="col-4 text-center"><?= $actu -> channel -> title  ?></div>
+              <div class="col-4 text-center"><?= $actu -> channel -> pubDate ?></div>
+              <div class="col-4 text-center"><?= $actu -> channel -> description ?></div>
+          </div>
+      </div>
+ 
 
   </main>
     
   <!-- =========================================== footer -->
-  <footer>
+  <footer class="container-fluid bg-dark text-white">
+    <div class="row justify-content-center text-center">
+      <div class="col-4">pouet1</div>
+      <div class="col-4">pouet2</div>
+      <div class="col-4">pouet3</div>
+      <div class="col-12">© Copyright Tristan && Pauline && Anthony</div>
+    </div>
 
   </footer>
 
