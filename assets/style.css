@@ -20,6 +20,12 @@ html{
 .mainarea{
     background-color: violet;
 }
+.main404{
+    height: 100vh;
+}
+#img404 {
+    max-width: 100%;
+}
 .list-unstyled{
     list-style: none;
 }

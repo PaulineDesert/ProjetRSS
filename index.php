@@ -33,7 +33,8 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
   <!-- =========================================== navbar -->
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -48,18 +49,25 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
           <a class="nav-link" href="#">Appli logiciel</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-white my-2 my-sm-0" type="submit"><img class="mr-2" src="assets/img/gear.svg">Paramètres</button>
+      <form action="" method="post" class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-white my-2 my-sm-0" name="gear" type="submit"><img class="mr-2"
+            src="assets/img/gear.svg">Paramètres</button>
       </form>
     </div>
   </nav>
 
   <!-- =========================================== main -->
-  <main>
+  <main class="mainarea py-4">
+
+    <?php
+
+if (isset($_POST['gear'])) {
+
+?>
 
     <section id="gear">
 
-      <div class="container mt-3">
+      <div class="container">
 
         <form action="" method="post" class="p-5 bg-light">
           <h1 class="text-center mb-5">Paramètres</h1>
@@ -109,14 +117,22 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
             </select>
           </div>
           <button type="submit" class="btn btn-dark mb-2 mx-auto d-block mt-5">Modifier</button>
+          <span><a href="index.php" class="btn btn-dark mb-2">Retour</a></span>
         </form>
       </div>
 
     </section>
+
+    <?php
+
+} else {
+
+?>
+
     <section class="mainarea">
       <div class="container">
         <div class="row justify-content-around">
-          <div class="col-4 text-center">
+          <div class="col-sm-4 text-center">
             <!-- Card -->
             <div class="card card-cascade narrower">
 
@@ -150,7 +166,7 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
             </div>
             <?= $actuRSS->channel->title  ?>
           </div>
-          <div class="col-4 text-center">
+          <div class="col-sm-4 text-center">
             <!-- Card -->
             <div class="card card-cascade narrower">
 
@@ -184,7 +200,7 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
             </div>
             <?= $actuRSS->channel->pubDate ?>
           </div>
-          <div class="col-4 text-center">
+          <div class="col-sm-4 text-center">
             <!-- Card -->
             <div class="card card-cascade narrower">
 
@@ -222,29 +238,34 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
       </div>
     </section>
 
-    <!-- =========================================== footer -->
-    <footer class="container-fluid bg-dark text-white">
-      <div class="container">
-        <div class="row justify-content-center text-center py-3">
-          <div class="col-4">
-            <b>Super RSS Reader</b>
-            <ul class="list-unstyled text-light">
-              <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
-              <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
-            </ul>
-          </div>
-          <div class="col-4">pouet2</div>
-          <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All rights reserved.</div>
+    <?php } ?>
+
+  </main>
+
+  <!-- =========================================== footer -->
+  <footer class="container-fluid bg-dark text-white">
+    <div class="container">
+      <div class="row justify-content-center text-center py-3">
+        <div class="col-4">
+          <b>Super RSS Reader</b>
+          <ul class="list-unstyled text-light">
+            <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
+            <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
+          </ul>
         </div>
+        <div class="col-4">pouet2</div>
+        <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All rights
+          reserved.</div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
-    <script type="text/javascript" src="assets/script.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/popper.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+  <script type="text/javascript" src="assets/script.js"></script>
 
 </body>
 
