@@ -20,3 +20,9 @@ html{
 .mainarea{
     background-color: violet;
 }
+.list-unstyled{
+    list-style: none;
+}
+.list-unstyled li{
+    border-bottom: solid 1px gray;
+}

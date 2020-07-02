@@ -111,13 +111,19 @@ var_dump($actuRSS);
     
   <!-- =========================================== footer -->
   <footer class="container-fluid bg-dark text-white">
-    <div class="row justify-content-center text-center">
-      <div class="col-4">pouet1</div>
-      <div class="col-4">pouet2</div>
-      <div class="col-4">pouet3</div>
-      <div class="col-12">© Copyright Tristan && Pauline && Anthony</div>
+    <div class="container">
+      <div class="row justify-content-center text-center py-3">
+        <div class="col-4">
+        <b>Super RSS Reader</b>
+          <ul class="list-unstyled text-light">
+            <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
+            <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <div class="col-4">pouet2</div>
+        <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All rights reserved.</div>
+      </div>
     </div>
-
   </footer>
 
 
