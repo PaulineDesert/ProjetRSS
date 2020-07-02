@@ -18,8 +18,11 @@
 
 <body>
   <!-- =========================================== header -->
-  <header class="container-fluid">
-    <div>
+  <header class="container-fluid" id="img-accueil">
+    <div class="row justify-content-center text-center">
+      <div class="col-12 py-5">
+        <h1 class="title-accueil"><b>Super RSS Reader</b></h1>
+      </div>
     </div>
   </header>
   <!-- =========================================== navbar -->
@@ -53,7 +56,13 @@
 
   </main>
   <!-- =========================================== footer -->
-  <footer>
+  <footer class="container-fluid bg-dark text-white">
+    <div class="row justify-content-center text-center">
+      <div class="col-4">pouet1</div>
+      <div class="col-4">pouet2</div>
+      <div class="col-4">pouet3</div>
+      <div class="col-12">@copyright Tristan && Pauline && Anthony</div>
+    </div>
 
   </footer>
 
