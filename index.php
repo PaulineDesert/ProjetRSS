@@ -3,7 +3,7 @@
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,34 +17,52 @@
 </head>
 
 <body>
-    <!-- =========================================== header -->
-    <header>
+  <!-- =========================================== header -->
+  <header class="container-fluid">
+    <div>
+    </div>
+  </header>
+  <!-- =========================================== navbar -->
+  
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Sujet 1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sujet 2</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sujet 3</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-white my-2 my-sm-0" type="submit"><img class="mr-2" src="assets/img/gear.svg">Paramètres</button>
+    </form>
+  </div>
+</nav>
 
-    </header>
-    <!-- =========================================== navbar -->
-    <nav>
+  <!-- =========================================== main -->
+  <main>
 
-    </nav>
-    <!-- =========================================== main -->
-    <main>
-        <section class="mainarea justify-content-around">
-<div>SLT1</div>
-<div>SLT2</div>
-<div>SLT3 </div>
-    
-        </section>
-    </main>
-    <!-- =========================================== footer -->
-    <footer>
+    <p>Contenu here</p>
 
-    </footer>
+  </main>
+  <!-- =========================================== footer -->
+  <footer>
+
+  </footer>
 
 
-    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/mdb.min.js"></script>
-    <script type="text/javascript" src="assets/script.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/popper.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+  <script type="text/javascript" src="assets/script.js"></script>
 
 </body>
 
