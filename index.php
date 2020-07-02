@@ -13,7 +13,6 @@
 </head>
 <body>
 
-<p>Contenu here</p>
 
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/popper.min.js"></script>
