@@ -20,8 +20,10 @@
 
 <body>
   <!-- =========================================== header -->
-  <header>
+  <header class="container-fluid">
+    <div>
 
+    </div>
   </header>
   <!-- =========================================== navbar -->
   <nav>
