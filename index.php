@@ -4,7 +4,7 @@ $fileRSS = simplexml_load_file("https://www.01net.com/rss/actualite/");
 $appsRSS = simplexml_load_file("https://www.01net.com/rss/actualites/applis-logiciels/");
 $securityRSS = simplexml_load_file("https://www.01net.com/rss/actualites/securite/");
 $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
-var_dump($actuRSS);
+// var_dump($actuRSS);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -58,51 +58,67 @@ var_dump($actuRSS);
 
 <section id="gear">
 
-<form action="" method="post">
-  <div class="form-group">
-    <label for="colors">Choix du design du site :</label>
-      <select id="colors" class="form-control">
+<div class="container mt-3">
+
+<form action="" method="post" class="p-5 bg-light">
+<h1 class="text-center mb-5">Paramètres</h1>
+  <div class="form-group row  justify-content-center">
+    <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
+      <select id="colors" class="form-control col-sm-5">
         <option selected>-</option>
         <option value="">Couleurs 1 / 2 / 3</option>
         <option value="">Couleurs 1 / 2 / 3</option>
         <option value="">Couleurs 1 / 2 / 3</option>
       </select>
   </div>
-  <div class="form-group">
-    <label for="aricles">Nombre d’articles affichés par sujet sur la page d’accueil :</label>
-    <select class="form-control" id="aricles">
+  <div class="form-group row  justify-content-left">
+    <label for="aricles" class="col-sm-6 text-right pr-5">Nombre d’articles affichés par sujet sur la page d’accueil :</label>
+    <select class="form-control col-sm-5" id="aricles">
       <option>-</option>
       <option value="">3</option>
       <option value="">5</option>
       <option value="">8</option>
     </select>
   </div>
-  <div class="form-group">
-    <label for="subjects">Choix des sujets sous forme de checkbox (proposer 5 choix) :</label>
-    <div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" id="choice1">
-  <label class="custom-control-label" for="choice1">choice1</label>
-  <input type="checkbox" class="custom-control-input" id="choice1">
-  <label class="custom-control-label" for="choice1">choice1</label>
-  <input type="checkbox" class="custom-control-input" id="choice1">
-  <label class="custom-control-label" for="choice1">choice1</label>
-  <input type="checkbox" class="custom-control-input" id="choice1">
-  <label class="custom-control-label" for="choice1">choice1</label>
-  <input type="checkbox" class="custom-control-input" id="choice1">
-  <label class="custom-control-label" for="choice1">choice1</label>
+  <div class="form-group row  justify-content-center">
+    <div class="col-sm-5 text-right pr-5">Choisissez trois sujets :</div>
+    <div class="col-sm-5">
+    <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="choice1">
+  <label class="form-check-label" for="choice1">Actualité</label>
+  </div>
+  <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="choice1">
+  <label class="form-check-label" for="choice1">Dossier</label>
+  </div>
+  <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="choice1">
+  <label class="form-check-label" for="choice1">Appli logiciel</label>
+  </div>
+  <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="choice1">
+  <label class="form-check-label" for="choice1">Sécurité</label>
+  </div>
+  <div class="form-check">
+  <input type="checkbox" class="form-check-input" id="choice1">
+  <label class="form-check-label" for="choice1">Pc périphériques</label>
+</div>
 </div>
     </select>
   </div>
+  <button type="submit" class="btn btn-dark mb-2 mx-auto d-block mt-5">Modifier</button>
 </form>
+</div>
+
 </section>
 
     <p>Contenu here</p>
   <main class="mainarea">
       <div class="container">
           <div class="row justify-content-around">
-              <div class="col-4 text-center"><?= $actu -> channel -> title  ?></div>
-              <div class="col-4 text-center"><?= $actu -> channel -> pubDate ?></div>
-              <div class="col-4 text-center"><?= $actu -> channel -> description ?></div>
+              <div class="col-4 text-center"><?= $actuRSS -> channel -> title  ?></div>
+              <div class="col-4 text-center"><?= $actuRSS -> channel -> pubDate ?></div>
+              <div class="col-4 text-center"><?= $actuRSS -> channel -> description ?></div>
           </div>
       </div>
  
