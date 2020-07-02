@@ -1,6 +1,7 @@
 <?php 
-
-
+$xmltest = "https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/";
+$actu = simplexml_load_file($xmltest);
+var_dump($actu);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,9 +48,15 @@
 </nav>
 
   <!-- =========================================== main -->
-  <main>
-
-    <p>Contenu here</p>
+  <main class="mainarea">
+      <div class="container">
+          <div class="row justify-content-around">
+              <div class="col-4 text-center"><?= $actu -> channel -> title  ?></div>
+              <div class="col-4 text-center"><?= $actu -> channel -> pubDate ?></div>
+              <div class="col-4 text-center"><?= $actu -> channel -> description ?></div>
+          </div>
+      </div>
+ 
 
   </main>
   <!-- =========================================== footer -->
