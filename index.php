@@ -68,7 +68,7 @@ var_dump($actu);
       <div class="col-4">pouet1</div>
       <div class="col-4">pouet2</div>
       <div class="col-4">pouet3</div>
-      <div class="col-12">@copyright Tristan && Pauline && Anthony</div>
+      <div class="col-12">© Copyright Tristan && Pauline && Anthony</div>
     </div>
 
   </footer>
