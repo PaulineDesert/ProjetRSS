@@ -1,5 +1,6 @@
 <?php 
 
+$actu = simplexml_load_file('https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/');
 
 ?>
 <!DOCTYPE html>
@@ -31,13 +32,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Sujet 1</a>
+        <a class="nav-link" href="#">Actualités</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sujet 2</a>
+        <a class="nav-link" href="#">Dossiers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Sujet 3</a>
+        <a class="nav-link" href="#">Appli logiciel</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -49,9 +50,50 @@
   <!-- =========================================== main -->
   <main>
 
+<section id="gear">
+
+<form action="" method="post">
+  <div class="form-group">
+    <label for="colors">Choix du design du site :</label>
+      <select id="colors" class="form-control">
+        <option selected>-</option>
+        <option value="">Couleurs 1 / 2 / 3</option>
+        <option value="">Couleurs 1 / 2 / 3</option>
+        <option value="">Couleurs 1 / 2 / 3</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="aricles">Nombre d’articles affichés par sujet sur la page d’accueil :</label>
+    <select class="form-control" id="aricles">
+      <option>-</option>
+      <option value="">3</option>
+      <option value="">5</option>
+      <option value="">8</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="subjects">Choix des sujets sous forme de checkbox (proposer 5 choix) :</label>
+    <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="choice1">
+  <label class="custom-control-label" for="choice1">choice1</label>
+  <input type="checkbox" class="custom-control-input" id="choice1">
+  <label class="custom-control-label" for="choice1">choice1</label>
+  <input type="checkbox" class="custom-control-input" id="choice1">
+  <label class="custom-control-label" for="choice1">choice1</label>
+  <input type="checkbox" class="custom-control-input" id="choice1">
+  <label class="custom-control-label" for="choice1">choice1</label>
+  <input type="checkbox" class="custom-control-input" id="choice1">
+  <label class="custom-control-label" for="choice1">choice1</label>
+</div>
+    </select>
+  </div>
+</form>
+</section>
+
     <p>Contenu here</p>
 
   </main>
+    
   <!-- =========================================== footer -->
   <footer>
 
