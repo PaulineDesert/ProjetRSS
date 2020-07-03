@@ -8,6 +8,11 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', 'PC périphériques'];
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];
 
+if (empty($_COOKIE)) {
+    header('Location: http://www.myrssfeed.info/index.php');
+    exit;
+}
+
 if (!isset($_COOKIE['colorsCookie'])) {
     setcookie("colorsCookie", 'couleur', time()+3600 * 24);
 }
