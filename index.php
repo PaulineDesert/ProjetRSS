@@ -76,9 +76,9 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="form-group row  justify-content-center">
             <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
             <select id="colors" class="form-control col-sm-5" name="colors">
-              <option value="grey" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'grey')? 'selected': (($_COOKIE['colorsCookie'] == 'grey')?'selected':'')) : 'selected'?>>Thème gris</option>
-              <option value="blue" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'blue')? 'selected': (($_COOKIE['colorsCookie'] == 'blue')?'selected':'')) : ''?>>Thème Bleu</option>
-              <option value="red" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'red')? 'selected': (($_COOKIE['colorsCookie'] == 'red')?'selected':'')) : ''?>>Thème Rouge</option>
+              <option value="grey" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'grey')?'selected': '') : (isset($_COOKIE['colorsCookie'])? (($_COOKIE['colorsCookie'] == 'grey')?'selected':'selected'):'')?>>Thème gris</option>
+              <option value="blue" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'blue')?'selected': '') : (isset($_COOKIE['colorsCookie'])? (($_COOKIE['colorsCookie'] == 'blue')?'selected':''):'')?>>Thème Bleu</option>
+              <option value="red" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'red')?'selected': '') : (isset($_COOKIE['colorsCookie'])? (($_COOKIE['colorsCookie'] == 'red')?'selected':''):'')?>>Thème Rouge</option>
             </select>
             <span class="text-danger"><?= isset($errorMessage['colors']) ? $errorMessage['colors'] : '' ?></span>
           </div>
