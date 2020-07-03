@@ -6,6 +6,7 @@ $appsRSS = simplexml_load_file("https://www.01net.com/rss/actualites/applis-logi
 $securityRSS = simplexml_load_file("https://www.01net.com/rss/actualites/securite/");
 $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', 'PC périphériques'];
+$colorFluxRSS = ['red', 'blue', 'green', 'yellow', 'purple'];
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];
 
 if (!isset($_COOKIE['colorsCookie'])) {
@@ -68,3 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     $postOk = false;
 };
+
+if (isset($_COOKIE['articlesCookie'])) {
+    $numberArticles = $_COOKIE['articlesCookie'];
+  } else {
+    $numberArticles = 3;
+  }
