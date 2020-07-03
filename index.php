@@ -76,9 +76,9 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="form-group row  justify-content-center">
             <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
             <select id="colors" class="form-control col-sm-5" name="colors">
-              <option value="grey" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'grey')? 'selected': (($_COOKIE['colorsCookie'] == 'grey')?'selected':'')) : 'selected'?>>Thème gris</option>
-              <option value="blue" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'blue')? 'selected': (($_COOKIE['colorsCookie'] == 'blue')?'selected':'')) : ''?>>Thème Bleu</option>
-              <option value="red" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'red')? 'selected': (($_COOKIE['colorsCookie'] == 'red')?'selected':'')) : ''?>>Thème Rouge</option>
+              <option value="grey" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'grey')?'selected': '') : (isset($_COOKIE['colorsCookie'])? (($_COOKIE['colorsCookie'] == 'grey')?'selected':'selected'):'')?>>Thème gris</option>
+              <option value="blue" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'blue')?'selected': '') : (isset($_COOKIE['colorsCookie'])? (($_COOKIE['colorsCookie'] == 'blue')?'selected':''):'')?>>Thème Bleu</option>
+              <option value="red" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'red')?'selected': '') : (isset($_COOKIE['colorsCookie'])? (($_COOKIE['colorsCookie'] == 'red')?'selected':''):'')?>>Thème Rouge</option>
             </select>
             <span class="text-danger"><?= isset($errorMessage['colors']) ? $errorMessage['colors'] : '' ?></span>
           </div>
@@ -171,6 +171,39 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
         </div>
 
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header d-block p-0 text-center">
+              <div class="view view-cascade gradient-card-header peach-gradient">
+                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h2>
+                <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
+              </div>
+              </div>
+              <div class="modal-body text-center">
+                
+
+              <!-- Text -->
+              <p class="font-weight-bold"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->title ?></p>
+              <p class="card-text"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->description ?></p>
+
+
+              </div>
+              <div class="modal-footer">
+                <a class="orange-text d-flex flex-row-reverse p-2" data-dismiss="modal">
+                  <h5 class="waves-effect waves-light text-dark">Fermer</h5>
+                </a>
+                <a href="#!" class="orange-text d-flex flex-row-reverse p-2">
+                  <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
         <?php
           }
         ?>
@@ -182,134 +215,7 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
     </div>
 
-    <section class="mainarea">
-      <div class="container">
-        <div class="row justify-content-around">
-          <div class="col-sm-4 text-center">
-            <!-- Card -->
-            <div class="card card-cascade narrower">
-
-              <!-- Card image -->
-              <div class="view view-cascade gradient-card-header peach-gradient">
-
-                <!-- Title -->
-                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h2>
-                <!-- Text -->
-                <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
-
-              </div>
-
-              <!-- Card content -->
-              <div class="card-body card-body-cascade text-center">
-
-                <!-- Text -->
-                <p class="font-weight-bold"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->title ?></p>
-                <p class="card-text"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->description ?></p>
-                <!-- Link -->
-                <a href="#!" class="orange-text d-flex flex-row-reverse p-2">
-                  <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
-                </a>
-
-              </div>
-              <!-- Card content -->
-
-            </div>
-            <?= $actuRSS->channel->title  ?>
-          </div>
-          <div class="col-sm-4 text-center">
-            <!-- Card -->
-            <div class="card card-cascade narrower">
-
-              <!-- Card image -->
-              <div class="view view-cascade gradient-card-header peach-gradient">
-
-                <!-- Title -->
-                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></h2>
-                <!-- Text -->
-                <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
-
-              </div>
-
-              <!-- Card content -->
-              <div class="card-body card-body-cascade text-center">
-
-                <!-- Text -->
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus, ex minis
-                  recusandae. Facere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est
-                  placeat vel, natus
-                  non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum.</p>
-                <!-- Link -->
-                <a href="#!" class="orange-text d-flex flex-row-reverse p-2">
-                  <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
-                </a>
-
-              </div>
-              <!-- Card content -->
-
-            </div>
-            <?= $actuRSS->channel->pubDate ?>
-          </div>
-          <div class="col-sm-4 text-center">
-            <!-- Card -->
-            <div class="card card-cascade narrower">
-
-              <!-- Card image -->
-              <div class="view view-cascade gradient-card-header peach-gradient">
-
-                <!-- Title -->
-                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></h2>
-                <!-- Text -->
-                <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
-
-              </div>
-
-              <!-- Card content -->
-              <div class="card-body card-body-cascade text-center">
-
-                <!-- Text -->
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus, ex minis
-                  recusandae. Facere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est
-                  placeat vel, natus
-                  non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum.</p>
-                <!-- Link -->
-                <a href="#!" class="orange-text d-flex flex-row-reverse p-2">
-                  <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
-                </a>
-
-              </div>
-              <!-- Card content -->
-
-            </div>
-            <?= $actuRSS->channel->description ?>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <?php } ?>
-
-    <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
   </main>
 
