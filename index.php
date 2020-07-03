@@ -58,7 +58,7 @@ var_dump($_POST);
 
   <!-- =========================================== main -->
   <main class="mainarea py-4">
-
+<a href="pages/pages?php">Ici</a>
     <?php
 
 if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
