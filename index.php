@@ -1,6 +1,7 @@
 <?php
 
 require_once 'controllers/index-controller.php';
+
 var_dump($_POST);
 
 // var_dump($actuRSS);
@@ -59,7 +60,7 @@ var_dump($_POST);
 
   <!-- =========================================== main -->
   <main class="color-light  py-4">
-
+<a href="pages/pages?php">Ici</a>
     <?php
 
 if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
@@ -95,23 +96,28 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-sm-5 text-right pr-5">Choisissez trois sujets :</div>
             <div class="col-sm-5">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0" <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('0', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0"
+                  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('0', $_POST['subject'])) ? 'checked' : '') ?>>
                 <label class="form-check-label" for="actuality">Actualité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1"  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('1', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1"
+                  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('1', $_POST['subject'])) ? 'checked' : '') ?>>
                 <label class="form-check-label" for="file">Dossier</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2"  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('2', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2"
+                  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('2', $_POST['subject'])) ? 'checked' : '') ?>>
                 <label class="form-check-label" for="apps">Appli logiciel</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3" <?= (!isset($_POST['subject'])) ? '' : ((in_array('3', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3"
+                  <?= (!isset($_POST['subject'])) ? '' : ((in_array('3', $_POST['subject'])) ? 'checked' : '') ?>>
                 <label class="form-check-label" for="security">Sécurité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4" <?= (!isset($_POST['subject'])) ? '' : ((in_array('4', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4"
+                  <?= (!isset($_POST['subject'])) ? '' : ((in_array('4', $_POST['subject'])) ? 'checked' : '') ?>>
                 <label class="form-check-label" for="pc">Pc périphériques</label>
               </div>
             </div>
@@ -119,8 +125,8 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
             <span class="text-danger"><?= isset($errorMessage['subject']) ? $errorMessage['subject'] : '' ?></span>
           </div>
           <div class="text-center">
-          <button type="submit" class="btn btn-dark mb-2 mt-5" name="changeGear">Modifier</button>
-          <span><a href="index.php" class="btn btn-dark mt-5 mb-2">Retour</a></span>
+            <button type="submit" class="btn btn-dark mb-2 mt-5" name="changeGear">Modifier</button>
+            <span><a href="index.php" class="btn btn-dark mt-5 mb-2">Retour</a></span>
           </div>
         </form>
       </div>
@@ -133,7 +139,50 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-    <section>
+    <div class="container-fluid">
+
+<?php
+  for ($row = 0; $row < 3; $row++) {
+?>
+
+      <div class="row">
+        
+      <?php
+        for ($col = 0; $col < 3; $col++) {
+          $article = $col + 1;
+      ?>
+
+        <div class="col-sm bg-secondary mx-2 p-0">
+          <div class="card m-2 bg-white">
+            <div class="row">
+              <div class="col-2 col-md-1 align-self-center">
+                <div class="rounded d-block view view-cascade gradient-card-header peach-gradient" style="width:3rem; height: 6rem"></div>
+              </div>
+              <div class="col align-self-center">
+                <p class="card-title m-0 p-0 ml-2"><?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item->title ?></p>
+              </div>
+              <div class="col-1 p-0 align-self-center">
+                <img src="assets/img/loup.svg" style="width:2rem" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#exampleModal">
+              </div>
+              <div class="col-1 p-0 align-self-center">
+                <img src="assets/img/arrow.svg" style="width:2rem" alt="Aller vers l'article" title="Aller vers l'article">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <?php
+          }
+        ?>
+
+      </div>
+
+<?php
+  }
+?>
+    </div>
+
+    <section class="mainarea">
       <div class="container">
         <div class="row justify-content-around">
           <div class="col-sm-4 text-center">
@@ -240,6 +289,27 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
     <?php } ?>
+
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   </main>
 
