@@ -1,9 +1,8 @@
 <?php
-$actuRSS = simplexml_load_file("https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/");
-$fileRSS = simplexml_load_file("https://www.01net.com/rss/actualite/");
-$appsRSS = simplexml_load_file("https://www.01net.com/rss/actualites/applis-logiciels/");
-$securityRSS = simplexml_load_file("https://www.01net.com/rss/actualites/securite/");
-$pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
+
+require_once 'controllers/index-controller.php';
+var_dump($_POST);
+
 // var_dump($actuRSS);
 ?>
 <!DOCTYPE html>
@@ -40,13 +39,13 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Actualités</a>
+          <a class="nav-link" href="#"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Dossiers</a>
+          <a class="nav-link" href="#"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Appli logiciel</a>
+          <a class="nav-link" href="#"><?= $titleFluxRSS[$_COOKIE['subjectCookie3']] ?></a>
         </li>
       </ul>
       <form action="" method="post" class="form-inline my-2 my-lg-0">
@@ -61,7 +60,7 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 
     <?php
 
-if (isset($_POST['gear'])) {
+if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
@@ -73,51 +72,52 @@ if (isset($_POST['gear'])) {
           <h1 class="text-center mb-5">Paramètres</h1>
           <div class="form-group row  justify-content-center">
             <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
-            <select id="colors" class="form-control col-sm-5">
-              <option selected>-</option>
-              <option value="">Couleurs 1 / 2 / 3</option>
-              <option value="">Couleurs 1 / 2 / 3</option>
-              <option value="">Couleurs 1 / 2 / 3</option>
+            <select id="colors" class="form-control col-sm-5" name="colors">
+              <option value="color1" selected>Couleurs 1 / 2 / 3</option>
+              <option value="color2">Couleurs 1 / 2 / 3</option>
+              <option value="color3">Couleurs 1 / 2 / 3</option>
             </select>
+            <span class="text-danger"><?= isset($errorMessage['colors']) ? $errorMessage['colors'] : '' ?></span>
           </div>
           <div class="form-group row  justify-content-left">
             <label for="aricles" class="col-sm-6 text-right pr-5">Nombre d’articles affichés par sujet sur
               la page d’accueil :</label>
-            <select class="form-control col-sm-5" id="aricles">
-              <option>-</option>
-              <option value="">3</option>
-              <option value="">5</option>
-              <option value="">8</option>
+            <select class="form-control col-sm-5" id="aricles" name="articles">
+              <option value="3" selected>3</option>
+              <option value="5">5</option>
+              <option value="8">8</option>
             </select>
+            <span class="text-danger"><?= isset($errorMessage['articles']) ? $errorMessage['articles'] : '' ?></span>
           </div>
           <div class="form-group row  justify-content-center">
             <div class="col-sm-5 text-right pr-5">Choisissez trois sujets :</div>
             <div class="col-sm-5">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="choice1">
-                <label class="form-check-label" for="choice1">Actualité</label>
+                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0" <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('0', $_POST['subject'])) ? 'checked' : '') ?>>
+                <label class="form-check-label" for="actuality">Actualité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="choice1">
-                <label class="form-check-label" for="choice1">Dossier</label>
+                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1"  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('1', $_POST['subject'])) ? 'checked' : '') ?>>
+                <label class="form-check-label" for="file">Dossier</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="choice1">
-                <label class="form-check-label" for="choice1">Appli logiciel</label>
+                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2"  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('2', $_POST['subject'])) ? 'checked' : '') ?>>
+                <label class="form-check-label" for="apps">Appli logiciel</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="choice1">
-                <label class="form-check-label" for="choice1">Sécurité</label>
+                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3" <?= (!isset($_POST['subject'])) ? '' : ((in_array('3', $_POST['subject'])) ? 'checked' : '') ?>>
+                <label class="form-check-label" for="security">Sécurité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="choice1">
-                <label class="form-check-label" for="choice1">Pc périphériques</label>
+                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4" <?= (!isset($_POST['subject'])) ? '' : ((in_array('4', $_POST['subject'])) ? 'checked' : '') ?>>
+                <label class="form-check-label" for="pc">Pc périphériques</label>
               </div>
             </div>
             </select>
+            <span class="text-danger"><?= isset($errorMessage['subject']) ? $errorMessage['subject'] : '' ?></span>
           </div>
           <div class="text-center">
-          <button type="submit" class="btn btn-dark mb-2 mt-5">Modifier</button>
+          <button type="submit" class="btn btn-dark mb-2 mt-5" name="changeGear">Modifier</button>
           <span><a href="index.php" class="btn btn-dark mt-5 mb-2">Retour</a></span>
           </div>
         </form>
@@ -142,7 +142,7 @@ if (isset($_POST['gear'])) {
               <div class="view view-cascade gradient-card-header peach-gradient">
 
                 <!-- Title -->
-                <h2 class="card-header-title mb-3">News Title</h2>
+                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h2>
                 <!-- Text -->
                 <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
 
@@ -152,11 +152,8 @@ if (isset($_POST['gear'])) {
               <div class="card-body card-body-cascade text-center">
 
                 <!-- Text -->
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Voluptatibus, ex minis
-                  recusandae. Facere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est
-                  placeat vel, natus
-                  non quos laudantium veritatis sequi.Ut enim ad minima veniam, quis nostrum.</p>
+                <p class="font-weight-bold"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->title ?></p>
+                <p class="card-text"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->description ?></p>
                 <!-- Link -->
                 <a href="#!" class="orange-text d-flex flex-row-reverse p-2">
                   <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
@@ -176,7 +173,7 @@ if (isset($_POST['gear'])) {
               <div class="view view-cascade gradient-card-header peach-gradient">
 
                 <!-- Title -->
-                <h2 class="card-header-title mb-3">News Title</h2>
+                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></h2>
                 <!-- Text -->
                 <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
 
@@ -210,7 +207,7 @@ if (isset($_POST['gear'])) {
               <div class="view view-cascade gradient-card-header peach-gradient">
 
                 <!-- Title -->
-                <h2 class="card-header-title mb-3">News Title</h2>
+                <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></h2>
                 <!-- Text -->
                 <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
 
