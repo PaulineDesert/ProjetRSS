@@ -18,6 +18,8 @@ var_dump($_POST);
   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/mdb.min.css">
   <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
+
 </head>
 
 <body>
@@ -31,7 +33,7 @@ var_dump($_POST);
   </header>
   <!-- =========================================== navbar -->
 
-  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -39,7 +41,7 @@ var_dump($_POST);
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></a>
+          <a class="nav-link" href="#"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></a>
@@ -56,7 +58,7 @@ var_dump($_POST);
   </nav>
 
   <!-- =========================================== main -->
-  <main class="mainarea py-4">
+  <main class="color-light  py-4">
 
     <?php
 
@@ -73,9 +75,9 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="form-group row  justify-content-center">
             <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
             <select id="colors" class="form-control col-sm-5" name="colors">
-              <option value="color1" selected>Couleurs 1 / 2 / 3</option>
-              <option value="color2">Couleurs 1 / 2 / 3</option>
-              <option value="color3">Couleurs 1 / 2 / 3</option>
+              <option value="grey" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'grey')? 'selected': (($_COOKIE['colorsCookie'] == 'grey')?'selected':'')) : 'selected'?>>Thème gris</option>
+              <option value="blue" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'blue')? 'selected': (($_COOKIE['colorsCookie'] == 'blue')?'selected':'')) : ''?>>Thème Bleu</option>
+              <option value="red" <?= (isset($_COOKIE['colorsCookie']))?((isset($_POST['colors']) && $_POST['colors'] == 'red')? 'selected': (($_COOKIE['colorsCookie'] == 'red')?'selected':'')) : ''?>>Thème Rouge</option>
             </select>
             <span class="text-danger"><?= isset($errorMessage['colors']) ? $errorMessage['colors'] : '' ?></span>
           </div>
@@ -131,7 +133,7 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-    <section class="mainarea">
+    <section>
       <div class="container">
         <div class="row justify-content-around">
           <div class="col-sm-4 text-center">
@@ -242,7 +244,7 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
   </main>
 
   <!-- =========================================== footer -->
-  <footer class="container-fluid bg-dark text-white">
+  <footer class="container-fluid color-dark text-white">
     <div class="container">
       <div class="row justify-content-center text-center py-3">
         <div class="col-4">

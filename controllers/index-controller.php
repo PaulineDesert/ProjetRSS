@@ -9,7 +9,7 @@ $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', '
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];
 
 if (!isset($_COOKIE['colorsCookie'])) {
-    setcookie("colorsCookie", 'couleur', time()+3600 * 24);
+    setcookie("colorsCookie", 'grey', time()+3600 * 24);
 }
 if (!isset($_COOKIE['articlesCookie'])) {
     setcookie("articlesCookie", 3, time()+3600 * 24);
@@ -27,7 +27,7 @@ if (!isset($_COOKIE['subjectCookie3'])) {
 var_dump($_COOKIE);
 
 $regexArticles = '/^(3)$|^(5)$|^(8)$/';
-$regexColors = '/^(color1)$|^(color2)$|^(color3)$/';
+$regexColors = '/^(grey)$|^(blue)$|^(red)$/';
 $regexSubjects = '/^[0-4]$/';
 
 $postOk = False;
