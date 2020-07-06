@@ -10,17 +10,19 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/mdb.min.css">
     <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="../assets/theme<?= isset($_POST['colors']) ? $_POST['colors'] : (isset($_COOKIE['colorsCookie']) ? $_COOKIE['colorsCookie'] : 'grey') ?>.css">
 </head>
 
 <body>
-    <main class="mainarea main404 py-4">
-        <div class="text-center">
+    <main class="main404 py-4">
+        <div class="text-center text-light">
             <h1 class="font-weight-bold">Erreur 404</h1>
             <p class="font-weight-bold">Page non trouvée</p>
-            <div>
+            
+            <a href="../index.php" class="btn btn-dark border border-white my-2">Retour</a>
+            <div class="fixed-bottom my-3">
                 <img id="img404" src="../assets/img/404.png" alt="Erreur 404">
             </div>
-            <a href="../index.php" class="btn btn-dark my-5">Retour</a>
         </div>
     </main>
 

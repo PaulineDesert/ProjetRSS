@@ -17,14 +17,18 @@ html{
     text-shadow: 0 0 5px #fe3d58, 0 0 10px rgb(97, 97, 97), 0 0 15px #001b6c;
 }
 
-.mainarea{
-    background-color: violet;
-}
+
 .main404{
     height: 100vh;
+    width: 100%;
+    background-image: url(img/imageaccueil.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 #img404 {
-    max-width: 100%;
+    max-width: 50%;
+    max-height: 50vh;
 }
 .list-unstyled{
     list-style: none;
