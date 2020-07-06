@@ -98,28 +98,28 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="col-sm-5 text-right pr-5">Choisissez trois sujets :</div>
             <div class="col-sm-5">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0"
-                  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('0', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0" 
+                <?= (isset($_POST['subject'])) ? ((in_array('0', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '0'||$_COOKIE['subjectCookie2'] == '0'||$_COOKIE['subjectCookie3'] == '0')?'checked':''):'')?>>
                 <label class="form-check-label" for="actuality">Actualité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1"
-                  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('1', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1" 
+                <?= (isset($_POST['subject'])) ? ((in_array('1', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '1'||$_COOKIE['subjectCookie2'] == '1'||$_COOKIE['subjectCookie3'] == '1')?'checked':''):'')?>>
                 <label class="form-check-label" for="file">Dossier</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2"
-                  <?= (!isset($_POST['subject'])) ? 'checked' : ((in_array('2', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2" 
+                <?= (isset($_POST['subject'])) ? ((in_array('2', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '2'||$_COOKIE['subjectCookie2'] == '2'||$_COOKIE['subjectCookie3'] == '2')?'checked':''):'')?>>
                 <label class="form-check-label" for="apps">Appli logiciel</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3"
-                  <?= (!isset($_POST['subject'])) ? '' : ((in_array('3', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3" 
+                <?= (isset($_POST['subject'])) ? ((in_array('3', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '3'||$_COOKIE['subjectCookie2'] == '3'||$_COOKIE['subjectCookie3'] == '3')?'checked':''):'')?>>
                 <label class="form-check-label" for="security">Sécurité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4"
-                  <?= (!isset($_POST['subject'])) ? '' : ((in_array('4', $_POST['subject'])) ? 'checked' : '') ?>>
+                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4" 
+                <?= (isset($_POST['subject'])) ? ((in_array('4', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '4'||$_COOKIE['subjectCookie2'] == '4'||$_COOKIE['subjectCookie3'] == '4')?'checked':''):'')?>>
                 <label class="form-check-label" for="pc">Pc périphériques</label>
               </div>
             </div>
