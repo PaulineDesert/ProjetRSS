@@ -98,9 +98,9 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="aricles" class="col-sm-6 text-right pr-5">Nombre d’articles affichés par sujet sur
               la page d’accueil :</label>
             <select class="form-control col-sm-5" id="aricles" name="articles">
-              <option value="3" selected>3</option>
-              <option value="5">5</option>
-              <option value="8">8</option>
+              <option value="3" <?= (isset($_POST['aricles'])) ? (($_POST['aricles'] == '3')?'selected': '') : (isset($_COOKIE['ariclesCookie'])? (($_COOKIE['ariclesCookie'] == '3')?'selected':'selected'):'')?>>3</option>
+              <option value="5" <?= (isset($_POST['aricles'])) ? (($_POST['aricles'] == '5')?'selected': '') : (isset($_COOKIE['ariclesCookie'])? (($_COOKIE['ariclesCookie'] == '5')?'selected':''):'')?>>5</option>
+              <option value="8" <?= (isset($_POST['aricles'])) ? (($_POST['aricles'] == '8')?'selected': '') : (isset($_COOKIE['ariclesCookie'])? (($_COOKIE['ariclesCookie'] == '8')?'selected':''):'')?>>8</option>
             </select>
             <span class="text-danger"><?= isset($errorMessage['articles']) ? $errorMessage['articles'] : '' ?></span>
           </div>

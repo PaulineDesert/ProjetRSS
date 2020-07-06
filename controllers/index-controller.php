@@ -26,6 +26,7 @@ if (!isset($_COOKIE['subjectCookie3'])) {
 }
 
 var_dump($_COOKIE);
+var_dump($_POST['subject']);
 
 $regexArticles = '/^(3)$|^(5)$|^(8)$/';
 $regexColors = '/^(grey)$|^(blue)$|^(red)$/';
