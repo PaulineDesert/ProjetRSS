@@ -42,18 +42,18 @@ var_dump($_POST);
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-        <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie1" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></button>
+        <form action="pages/pages.php" method="get" class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie" value="<?= isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0" ?>" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></button>
         </form>
         </li>
         <li class="nav-item">
           <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"0"] ?></button>
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie" value="<?= isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"1" ?>" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"1"] ?></button>
           </form>
         </li>
         <li class="nav-item">
           <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie3" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"0"] ?></button>
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie" value="<?= isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"2" ?>" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"2"] ?></button>
           </form>
         </li>
       </ul>
@@ -150,13 +150,13 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-fluid">
       <div class="row text-center">
         <div class="col-sm color-dark mx-2 p-0">
-          <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h2>
+          <h2><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></h2>
         </div>
         <div class="col-sm color-dark mx-2 p-0">
-          <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></h2>
+          <h2><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"1"] ?></h2>
         </div>
         <div class="col-sm color-dark mx-2 p-0">
-          <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie3']] ?></h2>
+          <h2><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"2"] ?></h2>
         </div>
       </div>
       <?php
