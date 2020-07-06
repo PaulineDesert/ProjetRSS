@@ -8,7 +8,6 @@ var_dump($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,8 +20,6 @@ var_dump($_POST);
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet"
     href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
-
-
 <body>
   <!-- =========================================== header -->
   <header class="container-fluid" id="img-accueil">
@@ -33,7 +30,6 @@ var_dump($_POST);
     </div>
   </header>
   <!-- =========================================== navbar -->
-
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,20 +59,14 @@ var_dump($_POST);
       </form>
     </div>
   </nav>
-
   <!-- =========================================== main -->
   <main class="color-light  py-4">
     <a href="pages/pages?php">Ici</a>
     <?php
-
-if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
-
+if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
-
     <section id="gear">
-
       <div class="container">
-
         <form action="" method="post" class="p-5 bg-light">
           <h1 class="text-center mb-5">Paramètres</h1>
           <div class="form-group row  justify-content-center">
@@ -223,22 +213,16 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
           </div>
         </div>
-
         <?php
           }
         ?>
-
       </div>
-
       <?php
   }
 ?>
     </div>
-
     <?php } ?>
-
   </main>
-
   <!-- =========================================== footer -->
   <footer class="container-fluid color-dark text-white">
     <div class="container">
@@ -249,15 +233,12 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
             <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
           </ul>
-        </div>
-        <div class="col-4">pouet2</div>
+        </div>  
         <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All rights
           reserved.</div>
       </div>
     </div>
   </footer>
-
-
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/popper.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>

@@ -1,5 +1,6 @@
 <?php
 
+require_once '../controllers/pages-controller.php';
 require_once '../controllers/index-controller.php';
 ?>
 <!DOCTYPE html>
@@ -15,32 +16,90 @@ require_once '../controllers/index-controller.php';
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/mdb.min.css">
     <link rel="stylesheet" href="../assets/style.css">
-</head>
+    <link rel="stylesheet"
+        href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
+
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="card mb-3">
-                <div class="row no-gutters">
-                    <div class="col-md-1 peach-gradient">
-                    </div>
-                    <div class="col-md-11">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h5>
-                            <p class="card-text text-center"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->description ?>
-                            
-                            <div class="text-right"><button class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">Read more <i class="fas fa-arrow-right"></i> </button></div>
-                            </p>
+    <!-- =========================================== header -->
+    <header class="container-fluid" id="img-accueil">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 py-5">
+                <h1 class="title-accueil"><b>Super RSS Reader</b></h1>
+            </div>
+        </div>
+    </header>
+    <!-- =========================================== navbar -->
+
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2"
+                            type="submit">Accueil</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="card mb-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-1 peach-gradient">
+                        </div>
+                        <div class="col-md-11">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h5>
+                                <p class="card-text text-center">
+                                    <?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->description ?>
+
+                                    <div class="text-right"><button
+                                            class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">Read more
+                                            <i class="fas fa-arrow-right"></i> </button></div>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../assets/js/mdb.min.js"></script>
-    <script type="text/javascript" src="../assets/script.js"></script>
+
+
+        <footer class="container-fluid color-dark text-white">
+            <div class="container">
+                <div class="row justify-content-center text-center py-3">
+                    <div class="col-4">
+                        <b>Super RSS Reader</b>
+                        <ul class="list-unstyled text-light">
+                            <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
+                            <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All
+                        rights
+                        reserved.</div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+        <script type="text/javascript" src="assets/script.js"></script>
+
+    </body>
+
+</html>
 
 </body>
