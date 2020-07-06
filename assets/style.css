@@ -1,7 +1,6 @@
 html{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif, Arial, Helveticagit;
 }
-
 #img-accueil {
     width: 100%;
     height: 50vh;
@@ -16,8 +15,6 @@ html{
     font-size: 5rem;
     text-shadow: 0 0 5px #fe3d58, 0 0 10px rgb(97, 97, 97), 0 0 15px #001b6c;
 }
-
-
 .main404{
     height: 100vh;
     width: 100%;
@@ -36,11 +33,9 @@ html{
 .list-unstyled li{
     border-bottom: solid 1px gray;
 }
-
 .imgWidth{
     width: 2rem;
 }
-
 .squareColor{
     width:3rem; 
     height: 6rem;

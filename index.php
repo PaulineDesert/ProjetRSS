@@ -33,7 +33,7 @@ require_once 'controllers/index-controller.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a href="index.php" class="btn btn-outline-white my-2 my-sm-0">Accueil</a></button>
+          <a href="accueil.html" class="btn btn-outline-white my-2 my-sm-0">Accueil</a></button>
         </li>
         <li class="nav-item active">
           <a href="<?= $hrefPage[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0")] ?></a>
@@ -110,7 +110,7 @@ require_once 'controllers/index-controller.php';
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-dark mb-2 mt-5" name="changeGear">Modifier</button>
-              <span><a href="index.php" class="btn btn-dark mt-5 mb-2">Retour</a></span>
+              <span><a href="accueil.html" class="btn btn-dark mt-5 mb-2">Retour</a></span>
             </div>
           </form>
         </div>
