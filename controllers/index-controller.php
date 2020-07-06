@@ -8,6 +8,7 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', 'PC périphériques'];
 $colorFluxRSS = ['red', 'blue', 'green', 'yellow', 'purple'];
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];
+$starterCookie = true;
 
 if (!isset($_COOKIE['colorsCookie'])) {
     setcookie("colorsCookie", 'grey', time()+3600 * 24);
@@ -23,6 +24,10 @@ if (!isset($_COOKIE['subjectCookie2'])) {
 }
 if (!isset($_COOKIE['subjectCookie3'])) {
     setcookie("subjectCookie3", 2, time()+3600 * 24);
+}
+if (!isset($_COOKIE['starterCookie'])) {
+    setcookie("starterCookie", true, time()+3600 * 24);
+    $starterCookie = false;
 }
 
 var_dump($_COOKIE);
