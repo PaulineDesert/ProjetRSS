@@ -170,7 +170,7 @@ require_once 'controllers/index-controller.php';
                     <div class="modal-header d-block p-0 text-center">
                       <div class="<?= $colorFluxRSS[$col] ?>">
                         <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$col] ?></h2>
-                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
+                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[$col]->channel->item[$row])->pubDate)) ?></p>
                       </div>
                     </div>
                     <div class="modal-body text-center">
@@ -246,7 +246,7 @@ require_once 'controllers/index-controller.php';
                         <div class="modal-header d-block p-0 text-center">
                           <div class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">
                             <h2 class="card-header-title textcolor-dark mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
-                            <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i>26.07.2017</p>
+                            <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row])->pubDate)) ?></p>
                           </div>
                         </div>
                         <div class="modal-body textcolor-dark text-center">
