@@ -37,18 +37,18 @@ require_once 'controllers/index-controller.php';
               href="index.php">Accueil</a></button>
         </li>
         <li class="nav-item active">
-          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie1" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0"] ?></button>
+          <form action="pages/pages.php" method="get" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie" value="<?= isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0" ?>" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0"] ?></button>
           </form>
         </li>
         <li class="nav-item">
-          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "0"] ?></button>
+          <form action="pages/pages.php" method="get" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie" value="<?= isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1" ?>" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1"] ?></button>
           </form>
         </li>
         <li class="nav-item">
-          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie3" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "0"] ?></button>
+          <form action="pages/pages.php" method="get" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie" value="<?= isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2" ?>" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2"] ?></button>
           </form>
         </li>
       </ul>
