@@ -32,3 +32,12 @@ html{
 .list-unstyled li{
     border-bottom: solid 1px gray;
 }
+
+.imgWidth{
+    width: 2rem;
+}
+
+.squareColor{
+    width:3rem; 
+    height: 6rem;
+}

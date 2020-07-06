@@ -145,18 +145,22 @@ require_once 'controllers/index-controller.php';
                 <div class="card m-2 bg-white">
                   <div class="row">
                     <div class="col-2 col-md-1 align-self-center">
+<<<<<<< HEAD
                       <div class="rounded-left d-block blockColor <?= $colorFluxRSS[$col] ?>" style="width:3rem; height: 6rem"></div>
+=======
+                      <div class="rounded-left d-block squareColor <?= $colorFluxRSS[$col] ?>"></div>
+>>>>>>> 282da97d7ebd988f0824b9b7778a417d731d6c2f
                     </div>
                     <div class="col-8 align-self-center">
                       <p class="card-title m-0 p-0 ml-2">
                         <?= $fluxRSS[$col]->channel->item[$row]->title ?></p>
                     </div>
                     <div class="col-1 p-0 align-self-center">
-                      <img src="assets/img/loup.svg" style="width:2rem" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
+                      <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
                     </div>
                     <div class="col-1 p-0 align-self-center">
                       <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank">
-                        <img src="assets/img/arrow.svg" style="width:2rem" alt="Aller vers l'article" title="Aller vers l'article">
+                        <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
                       </a>
                     </div>
                   </div>
@@ -184,7 +188,7 @@ require_once 'controllers/index-controller.php';
                         <h5 class="waves-effect waves-light text-dark">Fermer</h5>
                       </a>
                       <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
-                        <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
+                        <h5 class="waves-effect waves-light">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                       </a>
 
                     </div>
@@ -221,18 +225,22 @@ require_once 'controllers/index-controller.php';
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
                         <div class="col-2 col-md-1 p-0 align-self-center">
+<<<<<<< HEAD
                           <div class="rounded d-block bg-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>" style="width:3rem; height: 6rem"></div>
+=======
+                          <div class="rounded d-block squareColor <?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>"></div>
+>>>>>>> 282da97d7ebd988f0824b9b7778a417d731d6c2f
                         </div>
                         <div class="col p-0 align-self-center">
                           <p class="card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->title ?></p>
                         </div>
                         <div class="col-1 p-0 align-self-center">
-                          <img src="assets/img/loup.svg" style="width:2rem" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
+                          <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
                         </div>
                         <div class="col-1 p-0 align-self-center">
                           <a href="<?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->link ?>" target="_blank">
-                            <img src="assets/img/arrow.svg" style="width:2rem" alt="Aller vers l'article" title="Aller vers l'article">
+                            <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
                           </a>
                         </div>
                       </div>
@@ -260,7 +268,7 @@ require_once 'controllers/index-controller.php';
                             <h5 class="waves-effect waves-light text-dark">Fermer</h5>
                           </a>
                           <a href="<?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
-                            <h5 class="waves-effect waves-light text-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
+                            <h5 class="waves-effect waves-light text-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                           </a>
 
                         </div>
