@@ -1,5 +1,6 @@
 <?php
 require_once 'controllers/index-controller.php';
+var_dump($actuRSS);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +18,6 @@ require_once 'controllers/index-controller.php';
   <link rel="stylesheet" href="../assets/theme<?= isset($_POST['colors']) ? $_POST['colors'] : (isset($_COOKIE['colorsCookie']) ? $_COOKIE['colorsCookie'] : 'grey') ?>.css">
 
 <body>
-
   <!-- =========================================== header -->
   <header class="container-fluid" id="img-accueil">
     <div class="row justify-content-center text-center">
@@ -34,16 +34,23 @@ require_once 'controllers/index-controller.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a href="" class="btn btn-outline-white my-2 my-sm-0">Accueil</a>
+          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><a
+              href="index.php">Accueil</a></button>
         </li>
         <li class="nav-item active">
-          <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0")] ?></a>
+          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie1" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0"] ?></button>
+          </form>
         </li>
         <li class="nav-item">
-        <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : 1] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][1]:(isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1")] ?></a>
+          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "0"] ?></button>
+          </form>
         </li>
         <li class="nav-item">
-        <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : 2] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][2]:(isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2")] ?></a>
+          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie3" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "0"] ?></button>
+          </form>
         </li>
       </ul>
       <form action="" method="post" class="form-inline my-2 my-lg-0">
@@ -170,7 +177,7 @@ require_once 'controllers/index-controller.php';
                     <div class="modal-header d-block p-0 text-center">
                       <div class="<?= $colorFluxRSS[$col] ?>">
                         <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$col] ?></h2>
-                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2018</p>
+                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2017</p>
                       </div>
                     </div>
                     <div class="modal-body text-center">
