@@ -43,14 +43,19 @@ var_dump($_POST);
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link"
-            href="pages/pages.php"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></a>
+        <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie1" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></button>
+        </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/pages.php"><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></a>
+          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"0"] ?></button>
+          </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pages/pages.php"><?= $titleFluxRSS[$_COOKIE['subjectCookie3']] ?></a>
+          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie3" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"0"] ?></button>
+          </form>
         </li>
       </ul>
       <form action="" method="post" class="form-inline my-2 my-lg-0">
