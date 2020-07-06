@@ -1,8 +1,11 @@
 .color-dark{
     background-color: rgb(54, 3, 3);
-    color:  rgb(255, 185, 185);
+    color: rgb(255, 185, 185);
 }
 .color-light{
     background-color: rgb(255, 185, 185);
-    color:  rgb(54, 3, 3);
+    color: rgb(54, 3, 3);
+}
+.textcolor-dark{
+    color: rgb(54, 3, 3);
 }
