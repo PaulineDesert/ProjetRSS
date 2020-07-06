@@ -35,10 +35,7 @@ require_once '../controllers/pages-controller.php';
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2"
-                            type="submit">Accueil</button>
-                    </form>
+                    <a href="../accueil.html" class="btn btn-outline-white my-2 my-sm-0">Accueil</a>
                 </li>
             </ul>
         </div>
@@ -46,8 +43,8 @@ require_once '../controllers/pages-controller.php';
     
     <div class="container">
 
-    <div class="row text-center">
-        <div class="col-sm color-dark mx-2 p-0">
+    <div class="row text-center m-5">
+        <div class="col-sm text-dark mx-2 p-0">
           <h1><?= $titleFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?></h2>
         </div>
       </div>
@@ -56,13 +53,12 @@ require_once '../controllers/pages-controller.php';
         for ($row = 0; $row < count($fluxRSS[(isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0)]->channel->item); $row++) {
     ?>
 
-      <div class="row">
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-1 <?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>">
                     </div>
-                    <div class="col-md-11">
-                        <div class="card-body">
+                    <div class="col-sm-11">
+                        <div class="card-body col-md-11">
                             <h5 class="card-title text-center"><?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->title ?></h5>
                             <p class="card-text text-center"><?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->description ?>
                             <div class="text-right"><button class="<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>"><a href="<?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->link ?>"
@@ -73,12 +69,11 @@ require_once '../controllers/pages-controller.php';
                         </div>
                     </div>
                 </div>
-            </div>
             <?php
             }
         ?>
       </div>
-      
+
         <footer class="container-fluid color-dark text-white">
             <div class="container">
                 <div class="row justify-content-center text-center py-3">

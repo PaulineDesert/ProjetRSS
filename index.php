@@ -33,8 +33,7 @@ require_once 'controllers/index-controller.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><a
-              href="index.php">Accueil</a></button>
+          <a href="" class="btn btn-outline-white my-2 my-sm-0">Accueil</a>
         </li>
         <li class="nav-item active">
           <form action="pages/pages.php" method="get" class="form-inline my-2 my-lg-0">

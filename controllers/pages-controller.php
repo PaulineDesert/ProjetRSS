@@ -7,10 +7,3 @@ $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', 'PC périphériques'];
 $colorFluxRSS = ['red', 'blue', 'green', 'yellow', 'purple'];
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];
-
-if (!isset($_COOKIE['subjectPage'])) {
-    setcookie("subjectPage", 0, time()+3600 * 24);
-}
-if (isset($_POST['subjectCookie'])) {
-    setcookie("subjectPage", intval($_POST["subjectCookie"]), time()+3600 * 24);
-}
