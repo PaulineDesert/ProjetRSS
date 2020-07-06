@@ -28,7 +28,7 @@ require_once '../controllers/index-controller.php';
                         <div class="card-body">
                             <h5 class="card-title text-center"><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h5>
                             <p class="card-text text-center"><?= $fluxRSS[$_COOKIE['subjectCookie1']]->channel->item->description ?>
-                            <div class="text-right"><button class="btn peach-gradient">Read more <i class="fas fa-arrow-right"></i> </button></div>
+                            <div class="text-right"><button class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">Read more <i class="fas fa-arrow-right"></i> </button></div>
                             </p>
                         </div>
                     </div>

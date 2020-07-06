@@ -22,7 +22,6 @@ var_dump($_POST);
   <link rel="stylesheet"
     href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
 
-</head>
 
 <body>
   <!-- =========================================== header -->
