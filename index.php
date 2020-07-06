@@ -17,7 +17,6 @@ require_once 'controllers/index-controller.php';
   <link rel="stylesheet" href="../assets/theme<?= isset($_POST['colors']) ? $_POST['colors'] : (isset($_COOKIE['colorsCookie']) ? $_COOKIE['colorsCookie'] : 'grey') ?>.css">
 
 <body>
-
   <!-- =========================================== header -->
   <header class="container-fluid" id="img-accueil">
     <div class="row justify-content-center text-center">
@@ -34,7 +33,8 @@ require_once 'controllers/index-controller.php';
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a href="" class="btn btn-outline-white my-2 my-sm-0">Accueil</a>
+          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><a
+              href="index.php">Accueil</a></button>
         </li>
         <li class="nav-item active">
           <a href="<?= $hrefPage[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0")] ?></a>
@@ -170,7 +170,7 @@ require_once 'controllers/index-controller.php';
                     <div class="modal-header d-block p-0 text-center">
                       <div class="<?= $colorFluxRSS[$col] ?>">
                         <h2 class="card-header-title mb-3"><?= $titleFluxRSS[$col] ?></h2>
-                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i>26.07.2018</p>
+                        <p class="mb-0"><i class="fas fa-calendar mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[$col]->channel->item[$row])->pubDate)) ?></p>
                       </div>
                     </div>
                     <div class="modal-body text-center">
@@ -246,7 +246,7 @@ require_once 'controllers/index-controller.php';
                         <div class="modal-header d-block p-0 text-center">
                           <div class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?> shadow">
                             <h2 class="card-header-title textcolor-dark font-weight-bold mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
-                            <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i>26.07.2017</p>
+                            <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row])->pubDate)) ?></p>
                           </div>
                         </div>
                         <div class="modal-body textcolor-dark text-center">

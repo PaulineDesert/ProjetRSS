@@ -1,5 +1,6 @@
 <?php
 
+setlocale(LC_ALL, 'fr_FR.UTF8', 'fr_FR', 'fr', 'fr', 'fra', 'fr_FR@euro');
 $actuRSS = simplexml_load_file("https://www.01net.com/rss/info/flux-rss/flux-toutes-les-actualites/");
 $fileRSS = simplexml_load_file("https://www.01net.com/rss/actualite/");
 $appsRSS = simplexml_load_file("https://www.01net.com/rss/actualites/applis-logiciels/");
