@@ -211,14 +211,14 @@ require_once 'controllers/index-controller.php';
             $article = $col + 1;
           ?>
 
-            <div class="col-lg color-dark m-2 py-2 px-0">
-              <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
+            <div class="col-lg rounded shadow color-dark m-2 py-2 px-0">
+              <h2 class="font-weight-bold"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
               <div class="row mx-2">
 
                 <?php
                 for ($row = 0; $row < $numberArticles; $row++) {
                 ?>
-                  <div class="col-md-12 color-dark p-0">
+                  <div class="col-md-12 p-0">
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
                         <div class="col-2 col-md-1 p-0 align-self-center">
@@ -242,10 +242,10 @@ require_once 'controllers/index-controller.php';
                   <!-- Modal -->
                   <div class="modal fade" id="<?= 'id' . $col . $row ?>" tabindex="-1" role="dialog" aria-labelledby="<?= 'id' . $col . $row ?>" aria-hidden="true">
                     <div class="modal-dialog">
-                      <div class="modal-content">
+                      <div class="modal-content rounded">
                         <div class="modal-header d-block p-0 text-center">
-                          <div class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>">
-                            <h2 class="card-header-title textcolor-dark mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
+                          <div class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?> shadow">
+                            <h2 class="card-header-title textcolor-dark font-weight-bold mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
                             <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i>26.07.2017</p>
                           </div>
                         </div>
