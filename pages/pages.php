@@ -5,7 +5,6 @@ require_once '../controllers/index-controller.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,8 +17,6 @@ require_once '../controllers/index-controller.php';
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet"
         href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
-
-
 <body>
     <!-- =========================================== header -->
     <header class="container-fluid" id="img-accueil">
@@ -30,7 +27,6 @@ require_once '../controllers/index-controller.php';
         </div>
     </header>
     <!-- =========================================== navbar -->
-
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +43,6 @@ require_once '../controllers/index-controller.php';
             </ul>
         </div>
     </nav>
-
-
     <body>
         <div class="container">
             <div class="row">
@@ -72,8 +66,6 @@ require_once '../controllers/index-controller.php';
                 </div>
             </div>
         </div>
-
-
         <footer class="container-fluid color-dark text-white">
             <div class="container">
                 <div class="row justify-content-center text-center py-3">
@@ -90,16 +82,12 @@ require_once '../controllers/index-controller.php';
                 </div>
             </div>
         </footer>
-
-
         <script type="text/javascript" src="assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="assets/js/popper.min.js"></script>
         <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="assets/js/mdb.min.js"></script>
         <script type="text/javascript" src="assets/script.js"></script>
-
     </body>
-
 </html>
 
 </body>

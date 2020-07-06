@@ -3,6 +3,7 @@ require_once 'controllers/index-controller.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +16,7 @@ require_once 'controllers/index-controller.php';
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet"
     href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
+
 <body>
   <!-- =========================================== header -->
   <header class="container-fluid" id="img-accueil">
@@ -32,19 +34,26 @@ require_once 'controllers/index-controller.php';
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-        <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie1" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></button>
-        </form>
-        </li>
         <li class="nav-item">
+          <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><a
+              href="index.php">Accueil</a></button>
+        </li>
+        <li class="nav-item active">
           <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"0"] ?></button>
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie1"
+              type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1'])?$_COOKIE['subjectCookie1']:"0"] ?></button>
           </form>
         </li>
         <li class="nav-item">
           <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
-            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie3" type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"0"] ?></button>
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2"
+              type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2'])?$_COOKIE['subjectCookie2']:"1"] ?></button>
+          </form>
+        </li>
+        <li class="nav-item">
+          <form action="pages/pages.php" method="post" class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie3"
+              type="submit"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3'])?$_COOKIE['subjectCookie3']:"2"] ?></button>
           </form>
         </li>
       </ul>
@@ -56,7 +65,6 @@ require_once 'controllers/index-controller.php';
   </nav>
   <!-- =========================================== main -->
   <main class="color-light  py-4">
-    <a href="pages/pages?php">Ici</a>
     <?php
 if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
@@ -83,9 +91,15 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST"){
             <label for="aricles" class="col-sm-6 text-right pr-5">Nombre d’articles affichés par sujet sur
               la page d’accueil :</label>
             <select class="form-control col-sm-5" id="aricles" name="articles">
-              <option value="3" <?= (isset($_POST['articles'])) ? (($_POST['articles'] == '3')?'selected': '') : (isset($_COOKIE['articlesCookie'])? (($_COOKIE['articlesCookie'] == '3')?'selected':'selected'):'')?>>3</option>
-              <option value="5" <?= (isset($_POST['articles'])) ? (($_POST['articles'] == '5')?'selected': '') : (isset($_COOKIE['articlesCookie'])? (($_COOKIE['articlesCookie'] == '5')?'selected':''):'')?>>5</option>
-              <option value="8" <?= (isset($_POST['articles'])) ? (($_POST['articles'] == '8')?'selected': '') : (isset($_COOKIE['articlesCookie'])? (($_COOKIE['articlesCookie'] == '8')?'selected':''):'')?>>8</option>
+              <option value="3"
+                <?= (isset($_POST['articles'])) ? (($_POST['articles'] == '3')?'selected': '') : (isset($_COOKIE['articlesCookie'])? (($_COOKIE['articlesCookie'] == '3')?'selected':'selected'):'')?>>
+                3</option>
+              <option value="5"
+                <?= (isset($_POST['articles'])) ? (($_POST['articles'] == '5')?'selected': '') : (isset($_COOKIE['articlesCookie'])? (($_COOKIE['articlesCookie'] == '5')?'selected':''):'')?>>
+                5</option>
+              <option value="8"
+                <?= (isset($_POST['articles'])) ? (($_POST['articles'] == '8')?'selected': '') : (isset($_COOKIE['articlesCookie'])? (($_COOKIE['articlesCookie'] == '8')?'selected':''):'')?>>
+                8</option>
             </select>
             <span class="text-danger"><?= isset($errorMessage['articles']) ? $errorMessage['articles'] : '' ?></span>
           </div>
@@ -93,28 +107,28 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="col-sm-5 text-right pr-5">Choisissez trois sujets :</div>
             <div class="col-sm-5">
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0" 
-                <?= (isset($_POST['subject'])) ? ((in_array('0', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '0'||$_COOKIE['subjectCookie2'] == '0'||$_COOKIE['subjectCookie3'] == '0')?'checked':''):'')?>>
+                <input type="checkbox" class="form-check-input" id="actuality" name="subject[]" value="0"
+                  <?= (isset($_POST['subject'])) ? ((in_array('0', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '0'||$_COOKIE['subjectCookie2'] == '0'||$_COOKIE['subjectCookie3'] == '0')?'checked':''):'')?>>
                 <label class="form-check-label" for="actuality">Actualité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1" 
-                <?= (isset($_POST['subject'])) ? ((in_array('1', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '1'||$_COOKIE['subjectCookie2'] == '1'||$_COOKIE['subjectCookie3'] == '1')?'checked':''):'')?>>
+                <input type="checkbox" class="form-check-input" id="file" name="subject[]" value="1"
+                  <?= (isset($_POST['subject'])) ? ((in_array('1', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '1'||$_COOKIE['subjectCookie2'] == '1'||$_COOKIE['subjectCookie3'] == '1')?'checked':''):'')?>>
                 <label class="form-check-label" for="file">Dossier</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2" 
-                <?= (isset($_POST['subject'])) ? ((in_array('2', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '2'||$_COOKIE['subjectCookie2'] == '2'||$_COOKIE['subjectCookie3'] == '2')?'checked':''):'')?>>
+                <input type="checkbox" class="form-check-input" id="apps" name="subject[]" value="2"
+                  <?= (isset($_POST['subject'])) ? ((in_array('2', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '2'||$_COOKIE['subjectCookie2'] == '2'||$_COOKIE['subjectCookie3'] == '2')?'checked':''):'')?>>
                 <label class="form-check-label" for="apps">Appli logiciel</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3" 
-                <?= (isset($_POST['subject'])) ? ((in_array('3', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '3'||$_COOKIE['subjectCookie2'] == '3'||$_COOKIE['subjectCookie3'] == '3')?'checked':''):'')?>>
+                <input type="checkbox" class="form-check-input" id="security" name="subject[]" value="3"
+                  <?= (isset($_POST['subject'])) ? ((in_array('3', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '3'||$_COOKIE['subjectCookie2'] == '3'||$_COOKIE['subjectCookie3'] == '3')?'checked':''):'')?>>
                 <label class="form-check-label" for="security">Sécurité</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4" 
-                <?= (isset($_POST['subject'])) ? ((in_array('4', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '4'||$_COOKIE['subjectCookie2'] == '4'||$_COOKIE['subjectCookie3'] == '4')?'checked':''):'')?>>
+                <input type="checkbox" class="form-check-input" id="pc" name="subject[]" value="4"
+                  <?= (isset($_POST['subject'])) ? ((in_array('4', $_POST['subject']))?'checked': '') : ((isset($_COOKIE['subjectCookie1'])||isset($_COOKIE['subjectCookie2'])||isset($_COOKIE['subjectCookie3']))? (($_COOKIE['subjectCookie1'] == '4'||$_COOKIE['subjectCookie2'] == '4'||$_COOKIE['subjectCookie3'] == '4')?'checked':''):'')?>>
                 <label class="form-check-label" for="pc">Pc périphériques</label>
               </div>
             </div>
@@ -228,7 +242,7 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST"){
             <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
             <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
           </ul>
-        </div>  
+        </div>
         <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All rights
           reserved.</div>
       </div>

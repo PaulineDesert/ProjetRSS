@@ -24,14 +24,9 @@ if (!isset($_COOKIE['subjectCookie2'])) {
 if (!isset($_COOKIE['subjectCookie3'])) {
     setcookie("subjectCookie3", 2, time()+3600 * 24);
 }
-
-var_dump($_COOKIE);
-var_dump($_POST['subject']);
-
 $regexArticles = '/^(3)$|^(5)$|^(8)$/';
 $regexColors = '/^(grey)$|^(blue)$|^(red)$/';
 $regexSubjects = '/^[0-4]$/';
-
 $postOk = False;
 $errorMessage = [];
 

@@ -9,5 +9,5 @@ RewriteEngine on
 #--------------------------------------------------
 
 # Article sans numéro de page :
-
+RewriteRule ^([0-2]\.html)$ /pages/pages.php?subjectCookie=$0 [L]
 ErrorDocument 404 /pages/404.php
