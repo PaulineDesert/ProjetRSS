@@ -8,7 +8,7 @@ $securityRSS = simplexml_load_file("https://www.01net.com/rss/actualites/securit
 $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', 'PC périphériques'];
 $hrefPage = ['actualites.html', 'dossiers.html', 'applications.html', 'securite.html', 'peripheriques.html'];
-$colorFluxRSS = ['red', 'blue', 'green', 'yellow', 'purple'];
+$colorFluxRSS = ['danger', 'primary', 'secondary', 'success', 'warning'];
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];
 $starterCookie = true;
 

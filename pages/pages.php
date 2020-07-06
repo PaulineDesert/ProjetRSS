@@ -55,14 +55,14 @@ require_once '../controllers/pages-controller.php';
 
             <div class="card mb-3">
                 <div class="row no-gutters">
-                    <div class="col-md-1 <?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>">
+                    <div class="col-md-1 bg-<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>">
                     </div>
                     <div class="col-sm-11">
                         <div class="card-body col-md-11">
                             <h5 class="card-title text-center"><?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->title ?></h5>
                             <p class="mb-0 text-center"><i class="fas fa-calendar mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row])->pubDate)) ?></p>
                             <p class="card-text text-center"><?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->description ?>
-                            <div class="text-right"><button class="<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>"><a href="<?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->link ?>"
+                            <div class="text-right"><button class="bg-<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>"><a href="<?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->link ?>"
                                 target="_blank" class="text-body h6 mr-1">Read more</a><i class="fas fa-arrow-right"></i> </button></div>
                             </p>
 
