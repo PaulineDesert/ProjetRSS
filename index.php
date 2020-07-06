@@ -144,13 +144,9 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
 
     </section>
-
     <?php
-
 } else {
-
 ?>
-
     <div class="container-fluid">
       <div class="row text-center">
         <div class="col-sm color-dark mx-2 p-0">
@@ -163,19 +159,14 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
           <h2><?= $titleFluxRSS[2] ?></h2>
         </div>
       </div>
-
       <?php
   for ($row = 0; $row < $numberArticles; $row++) {
 ?>
-
       <div class="row">
-
         <?php
-  
       for ($col = 0; $col < 3; $col++) {
         $article = $col + 1;
       ?>
-
         <div class="col-sm color-dark mx-2 p-0">
           <div class="card m-2 bg-white">
             <div class="row">
@@ -201,8 +192,6 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
           </div>
         </div>
-
-
         <!-- Modal -->
         <div class="modal fade" id="<?= 'id' . $col . $row?>" tabindex="-1" role="dialog"
           aria-labelledby="<?= 'id' . $col . $row?>" aria-hidden="true">
@@ -215,15 +204,11 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
               </div>
               <div class="modal-body text-center">
-
-
                 <!-- Text -->
                 <p class="font-weight-bold">
                   <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->title ?></p>
                 <p class="card-text">
                   <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->description ?></p>
-
-
               </div>
               <div class="modal-footer">
                 <a class="orange-text d-flex flex-row-reverse p-2" data-dismiss="modal">
