@@ -1,10 +1,10 @@
 <?php
 
 require_once '../controllers/pages-controller.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,9 +15,35 @@ require_once '../controllers/pages-controller.php';
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/mdb.min.css">
     <link rel="stylesheet" href="../assets/style.css">
-</head>
-
+    <link rel="stylesheet"
+        href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
 <body>
+    <!-- =========================================== header -->
+    <header class="container-fluid" id="img-accueil">
+        <div class="row justify-content-center text-center">
+            <div class="col-12 py-5">
+                <h1 class="title-accueil"><b>Super RSS Reader</b></h1>
+            </div>
+        </div>
+    </header>
+    <!-- =========================================== navbar -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <form action="../index.php" method="post" class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-outline-white my-2 my-sm-0" name="subjectCookie2"
+                            type="submit">Accueil</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
     <div class="container">
 
     <div class="row text-center">
@@ -42,21 +68,39 @@ require_once '../controllers/pages-controller.php';
                             <div class="text-right"><button class="<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>"><a href="<?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->link ?>"
                                 target="_blank" class="text-body h6 mr-1">Read more</a><i class="fas fa-arrow-right"></i> </button></div>
                             </p>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-      </div>
-
-        <?php
+            <?php
             }
         ?>
-
-    </div>
-    <script type="text/javascript" src="../assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="../assets/js/popper.min.js"></script>
-    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../assets/js/mdb.min.js"></script>
-    <script type="text/javascript" src="../assets/script.js"></script>
+      </div>
+      
+        <footer class="container-fluid color-dark text-white">
+            <div class="container">
+                <div class="row justify-content-center text-center py-3">
+                    <div class="col-4">
+                        <b>Super RSS Reader</b>
+                        <ul class="list-unstyled text-light">
+                            <li><a class="text-decoration-none text-light" href="">Cookies</a></li>
+                            <li><a class="text-decoration-none text-light" href="">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 text-light">© Copyright 2020 Super RSS Reader. Tristan && Pauline && Anthony. All
+                        rights
+                        reserved.</div>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/popper.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/mdb.min.js"></script>
+        <script type="text/javascript" src="assets/script.js"></script>
+    </body>
+</html>
 
 </body>
