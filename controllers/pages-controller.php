@@ -5,5 +5,5 @@ $appsRSS = simplexml_load_file("https://www.01net.com/rss/actualites/applis-logi
 $securityRSS = simplexml_load_file("https://www.01net.com/rss/actualites/securite/");
 $pcRSS = simplexml_load_file("https://www.01net.com/rss/pc-peripheriques/");
 $titleFluxRSS = ['Actualités', 'Dossiers', 'Applis, Logiciels', 'Sécurité', 'PC périphériques'];
-$colorFluxRSS = ['red', 'blue', 'green', 'yellow', 'purple'];
+$colorFluxRSS = ['danger', 'primary', 'secondary', 'success', 'warning'];
 $fluxRSS = [$actuRSS, $fileRSS, $appsRSS, $securityRSS, $pcRSS];

@@ -140,18 +140,18 @@ require_once 'controllers/index-controller.php';
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
                         <div class="col-2 col-md-1 p-0 align-self-center">
-                          <div class="rounded d-block <?= $colorFluxRSS[$col] ?>" style="width:3rem; height: 6rem"></div>
+                          <div class="rounded d-block squareColor <?= $colorFluxRSS[$col] ?>"></div>
                         </div>
                         <div class="col p-0 align-self-center">
                           <p class="card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$col]->channel->item[$row]->title ?></p>
                         </div>
                         <div class="col-1 p-0 align-self-center">
-                          <img src="assets/img/loup.svg" style="width:2rem" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
+                          <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
                         </div>
                         <div class="col-1 p-0 align-self-center">
                           <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank">
-                            <img src="assets/img/arrow.svg" style="width:2rem" alt="Aller vers l'article" title="Aller vers l'article">
+                            <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
                           </a>
                         </div>
                       </div>
@@ -179,7 +179,7 @@ require_once 'controllers/index-controller.php';
                             <h5 class="waves-effect waves-light text-dark">Fermer</h5>
                           </a>
                           <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
-                            <h5 class="waves-effect waves-light">Read more<i class="fas fa-angle-double-right ml-2"></i></h5>
+                            <h5 class="waves-effect waves-light">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                           </a>
 
                         </div>
@@ -196,7 +196,6 @@ require_once 'controllers/index-controller.php';
           ?>
         </div>
       </div>
-
     <?php
     } else {
     ?>
@@ -219,7 +218,7 @@ require_once 'controllers/index-controller.php';
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
                         <div class="col-2 col-md-1 p-0 align-self-center">
-                          <div class="rounded d-block squareColor <?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>"></div>
+                          <div class="rounded d-block squareColor bg-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>"></div>
                         </div>
                         <div class="col p-0 align-self-center">
                           <p class="card-title textcolor-dark m-0 p-0">
@@ -241,7 +240,7 @@ require_once 'controllers/index-controller.php';
                     <div class="modal-dialog">
                       <div class="modal-content rounded">
                         <div class="modal-header d-block p-0 text-center">
-                          <div class="<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?> shadow">
+                          <div class="bg-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?> shadow">
                             <h2 class="card-header-title textcolor-dark font-weight-bold mb-3"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
                             <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row])->pubDate)) ?></p>
                           </div>
@@ -275,6 +274,7 @@ require_once 'controllers/index-controller.php';
           ?>
         </div>
       </div>
+
     <?php } ?>
   </main>
   <!-- =========================================== footer -->
