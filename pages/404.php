@@ -19,7 +19,7 @@
             <h1 class="font-weight-bold">Erreur 404</h1>
             <p class="font-weight-bold">Page non trouvée</p>
             
-            <a href="../index.php" class="btn btn-dark border border-white my-2">Retour</a>
+            <a href="../index.php" class="btn btn-Color color-light my-2"><b>Retour</b></a>
             <div class="fixed-bottom my-3">
                 <img id="img404" src="../assets/img/404.png" alt="Erreur 404">
             </div>

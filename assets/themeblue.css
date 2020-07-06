@@ -15,3 +15,11 @@
 .titleColor{
     color : rgb(221, 221, 255);
 }
+
+.btn-Color{
+    border: solid 1px rgb(0, 13, 51);
+}
+
+.btn-Color:hover{
+    background-color: rgb(190, 190, 255);
+}

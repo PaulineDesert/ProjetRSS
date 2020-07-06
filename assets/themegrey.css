@@ -14,3 +14,11 @@ background: linear-gradient(45deg, rgba(28,28,28,1) 0%, rgba(80,80,80,1) 50%, rg
 .titleColor{
     color :rgb(221, 221, 221);
 }
+
+.btn-Color{
+    border: solid 1px rgb(41, 41, 41);
+}
+
+.btn-Color:hover{
+    background-color: rgb(199, 199, 199);
+}

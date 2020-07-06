@@ -57,7 +57,7 @@ require_once 'controllers/index-controller.php';
     ?>
       <section id="gear">
         <div class="container">
-          <form action="" method="post" class="p-5 bg-light">
+          <form action="" method="post" class="p-5 bg-white rounded shadow">
             <h1 class="text-center mb-5">Paramètres</h1>
             <div class="form-group row  justify-content-center">
               <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
@@ -109,8 +109,8 @@ require_once 'controllers/index-controller.php';
               <span class="text-danger"><?= isset($errorMessage['subject']) ? $errorMessage['subject'] : '' ?></span>
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-dark mb-2 mt-5" name="changeGear">Modifier</button>
-              <span><a href="accueil.html" class="btn btn-dark mt-5 mb-2">Retour</a></span>
+              <button type="submit" class="btn mb-2 mt-5 color-light btn-Color" name="changeGear">Modifier</button>
+              <span><a href="accueil.html" class="btn mt-5 mb-2 color-light btn-Color">Retour</a></span>
             </div>
           </form>
         </div>
