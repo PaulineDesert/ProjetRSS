@@ -37,13 +37,13 @@ require_once 'controllers/index-controller.php';
           <a href="" class="btn btn-outline-white my-2 my-sm-0">Accueil</a>
         </li>
         <li class="nav-item active">
-          <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0"] ?></a>
+          <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0")] ?></a>
         </li>
         <li class="nav-item">
-        <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : 1] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1"] ?></a>
+        <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : 1] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][1]:(isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1")] ?></a>
         </li>
         <li class="nav-item">
-        <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : 2] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2"] ?></a>
+        <a href="<?= $hrefPage[isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : 2] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][2]:(isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2")] ?></a>
         </li>
       </ul>
       <form action="" method="post" class="form-inline my-2 my-lg-0">
