@@ -14,7 +14,7 @@ require_once 'controllers/index-controller.php';
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/mdb.min.css">
   <link rel="stylesheet" href="../assets/style.css">
-  <link rel="stylesheet" href="../assets/theme<?= isset($_POST['colors']) ? $_POST['colors'] : (isset($_COOKIE['colorsCookie']) ? $_COOKIE['colorsCookie'] : 'grey') ?>.css">
+  <link rel="stylesheet" href="../assets/theme<?= $_POST['colors'] ?? $_COOKIE['colorsCookie'] ?? 'grey' ?>.css">
 
 <body>
   <!-- =========================================== header -->
