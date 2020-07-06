@@ -123,14 +123,14 @@ require_once 'controllers/index-controller.php';
 
       <div class="container-fluid">
         <div class="row text-center">
-          <div class="col-md color-dark mx-2 p-0">
-            <h2><?= $titleFluxRSS['0'] ?></h2>
+          <div class="col-md mx-2 p-0">
+            <h2 class="titleColor"><?= $titleFluxRSS['0'] ?></h2>
           </div>
-          <div class="col-md color-dark mx-2 p-0">
-            <h2><?= $titleFluxRSS['1'] ?></h2>
+          <div class="col-md k mx-2 p-0">
+            <h2 class="titleColor"><?= $titleFluxRSS['1'] ?></h2>
           </div>
-          <div class="col-md color-dark mx-2 p-0">
-            <h2><?= $titleFluxRSS['2'] ?></h2>
+          <div class="col-md mx-2 p-0">
+            <h2 class="titleColor"><?= $titleFluxRSS['2'] ?></h2>
           </div>
         </div>
         <?php

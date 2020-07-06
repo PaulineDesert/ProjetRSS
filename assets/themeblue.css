@@ -2,6 +2,7 @@
     background: rgb(0,13,51);
     background: linear-gradient(45deg, rgba(0,13,51,1) 0%, rgba(0,28,112,1) 50%, rgba(0,17,69,1) 100%);
     color: rgb(221, 221, 255);
+    
 }
 .color-light{
     background-color: rgb(221, 221, 255);
@@ -9,4 +10,8 @@
 }
 .textcolor-dark{
     color: rgb(0, 13, 51);
+}
+
+.titleColor{
+    color : rgb(221, 221, 255);
 }
