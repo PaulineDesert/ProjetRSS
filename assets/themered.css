@@ -1,24 +1,27 @@
-.color-dark{
-    background: rgb(80,27,36);
-    background: linear-gradient(45deg, rgba(80,27,36,1) 0%, rgba(140,43,51,1) 50%, rgba(120,35,48,1) 100%); 
+.color-dark {
+    background: rgb(80, 27, 36);
+    background: linear-gradient(45deg, rgba(80, 27, 36, 1) 0%, rgba(140, 43, 51, 1) 50%, rgba(120, 35, 48, 1) 100%);
     color: rgb(255, 221, 221);
 }
-.color-light{
+
+.color-light {
     background-color: rgb(255, 221, 221);
     color: rgb(41, 9, 14);
 }
-.textcolor-dark{
+
+.textcolor-dark {
     color: rgb(41, 9, 14);
 }
 
-.titleColor{
-    color :rgb(255, 221, 221);;
+.titleColor {
+    color: rgb(255, 221, 221);
+    ;
 }
 
-.btn-Color{
+.btn-Color {
     border: solid 1px rgb(41, 9, 14);
 }
 
-.btn-Color:hover{
+.btn-Color:hover {
     background-color: rgb(255, 190, 190);
 }

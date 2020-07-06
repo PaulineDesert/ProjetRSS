@@ -36,13 +36,13 @@ require_once 'controllers/index-controller.php';
           <a href="accueil.html" class="btn btn-outline-white my-2 my-sm-0">Accueil</a></button>
         </li>
         <li class="nav-item active">
-          <a href="<?= $hrefPage[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][0]:(isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0")] ?></a>
+          <a href="<?= $hrefPage[isset($_POST['subject']) ? $_POST['subject'][0] : (isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : 0)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject']) ? $_POST['subject'][0] : (isset($_COOKIE['subjectCookie1']) ? $_COOKIE['subjectCookie1'] : "0")] ?></a>
         </li>
         <li class="nav-item">
-        <a href="<?= $hrefPage[isset($_POST['subject'])?$_POST['subject'][1]:(isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : 1)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][1]:(isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1")] ?></a>
+          <a href="<?= $hrefPage[isset($_POST['subject']) ? $_POST['subject'][1] : (isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : 1)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject']) ? $_POST['subject'][1] : (isset($_COOKIE['subjectCookie2']) ? $_COOKIE['subjectCookie2'] : "1")] ?></a>
         </li>
         <li class="nav-item">
-        <a href="<?= $hrefPage[isset($_POST['subject'])?$_POST['subject'][2]:(isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : 2)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject'])?$_POST['subject'][2]:(isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2")] ?></a>
+          <a href="<?= $hrefPage[isset($_POST['subject']) ? $_POST['subject'][2] : (isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : 2)] ?>" class="btn btn-outline-white my-2 my-sm-0"><?= $titleFluxRSS[isset($_POST['subject']) ? $_POST['subject'][2] : (isset($_COOKIE['subjectCookie3']) ? $_COOKIE['subjectCookie3'] : "2")] ?></a>
         </li>
       </ul>
       <form action="" method="post" class="form-inline my-2 my-lg-0">
@@ -63,7 +63,7 @@ require_once 'controllers/index-controller.php';
               <label for="colors" class="col-sm-5 text-right pr-5">Choix du design du site :</label>
               <select id="colors" class="form-control col-sm-5" name="colors">
                 <option value="grey" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'grey') ? 'selected' : '') : (isset($_COOKIE['colorsCookie']) ? (($_COOKIE['colorsCookie'] == 'grey') ? 'selected' : 'selected') : '') ?>>
-                  Thème gris</option>
+                  Thème Gris</option>
                 <option value="blue" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'blue') ? 'selected' : '') : (isset($_COOKIE['colorsCookie']) ? (($_COOKIE['colorsCookie'] == 'blue') ? 'selected' : '') : '') ?>>
                   Thème Bleu</option>
                 <option value="red" <?= (isset($_POST['colors'])) ? (($_POST['colors'] == 'red') ? 'selected' : '') : (isset($_COOKIE['colorsCookie']) ? (($_COOKIE['colorsCookie'] == 'red') ? 'selected' : '') : '') ?>>
@@ -121,7 +121,7 @@ require_once 'controllers/index-controller.php';
       $starterCookie = true;
     ?>
 
-<div class="container-fluid">
+      <div class="container-fluid">
         <div class="row text-center">
 
           <?php
@@ -139,20 +139,21 @@ require_once 'controllers/index-controller.php';
                   <div class="col-md-12 p-0">
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
-                        <div class="col-2 col-md-1 p-0 align-self-center">
-                          <div class="rounded d-block squareColor <?= $colorFluxRSS[$col] ?>"></div>
+                        <div class="col-2 col-sm-2 p-0 align-self-center">
+                          <div class="rounded d-block squareColor bg-<?= $colorFluxRSS[$col] ?>"></div>
                         </div>
-                        <div class="col p-0 align-self-center">
-                          <p class="card-title textcolor-dark m-0 p-0">
+                        <div class="col-10 col-sm-10 row p-0 align-self-center">
+                          <p class="col-12 col-sm-10 card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$col]->channel->item[$row]->title ?></p>
-                        </div>
-                        <div class="col-1 p-0 align-self-center">
-                          <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
-                        </div>
-                        <div class="col-1 p-0 align-self-center">
-                          <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank">
-                            <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
-                          </a>
+
+                          <div class="col-5 col-sm-1 p-0 align-self-center">
+                            <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
+                          </div>
+                          <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
+                            <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank">
+                              <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -217,20 +218,21 @@ require_once 'controllers/index-controller.php';
                   <div class="col-md-12 p-0">
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
-                        <div class="col-2 col-md-1 p-0 align-self-center">
+                        <div class="col-2 col-sm-2 p-0 align-self-center">
                           <div class="rounded d-block squareColor bg-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>"></div>
                         </div>
-                        <div class="col p-0 align-self-center">
-                          <p class="card-title textcolor-dark m-0 p-0">
+                        <div class="col-10 col-sm-10 row p-0 align-self-center">
+                          <p class="col-12 col-sm-10 card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->title ?></p>
-                        </div>
-                        <div class="col-1 p-0 align-self-center">
-                          <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
-                        </div>
-                        <div class="col-1 p-0 align-self-center">
-                          <a href="<?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->link ?>" target="_blank">
-                            <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
-                          </a>
+
+                          <div class="col-5 col-sm-1 p-0 align-self-center">
+                            <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
+                          </div>
+                          <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
+                            <a href="<?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->link ?>" target="_blank">
+                              <img src="assets/img/arrow.svg" class="imgWidth" alt="Aller vers l'article" title="Aller vers l'article">
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
