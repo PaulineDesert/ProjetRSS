@@ -146,7 +146,7 @@ require_once 'controllers/index-controller.php';
                           <p class="col-12 col-sm-10 card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$col]->channel->item[$row]->title ?></p>
 
-                          <div class="col-5 col-sm-1 p-0 align-self-center">
+                          <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
                             <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
                           </div>
                           <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
@@ -225,7 +225,7 @@ require_once 'controllers/index-controller.php';
                           <p class="col-12 col-sm-10 card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->title ?></p>
 
-                          <div class="col-5 col-sm-1 p-0 align-self-center">
+                          <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
                             <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
                           </div>
                           <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
