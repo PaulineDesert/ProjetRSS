@@ -145,11 +145,7 @@ require_once 'controllers/index-controller.php';
                 <div class="card m-2 bg-white">
                   <div class="row">
                     <div class="col-2 col-md-1 align-self-center">
-<<<<<<< HEAD
-                      <div class="rounded-left d-block blockColor <?= $colorFluxRSS[$col] ?>" style="width:3rem; height: 6rem"></div>
-=======
-                      <div class="rounded-left d-block squareColor <?= $colorFluxRSS[$col] ?>"></div>
->>>>>>> 282da97d7ebd988f0824b9b7778a417d731d6c2f
+                      <div class="rounded-left d-block squareColor bg-<?= $colorFluxRSS[$col] ?>"></div>
                     </div>
                     <div class="col-8 align-self-center">
                       <p class="card-title m-0 p-0 ml-2">
@@ -225,11 +221,7 @@ require_once 'controllers/index-controller.php';
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
                         <div class="col-2 col-md-1 p-0 align-self-center">
-<<<<<<< HEAD
-                          <div class="rounded d-block bg-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>" style="width:3rem; height: 6rem"></div>
-=======
-                          <div class="rounded d-block squareColor <?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>"></div>
->>>>>>> 282da97d7ebd988f0824b9b7778a417d731d6c2f
+                          <div class="rounded d-block squareColor bg-<?= $colorFluxRSS[$_COOKIE['subjectCookie' . $article]] ?>"></div>
                         </div>
                         <div class="col p-0 align-self-center">
                           <p class="card-title textcolor-dark m-0 p-0">
