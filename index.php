@@ -179,7 +179,7 @@ require_once 'controllers/index-controller.php';
                             <h5 class="waves-effect waves-light text-dark">Fermer</h5>
                           </a>
                           <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
-                            <h5 class="waves-effect waves-light">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
+                            <h5 class="waves-effect waves-light text-<?= $colorFluxRSS[$col] ?>">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                           </a>
 
                         </div>
