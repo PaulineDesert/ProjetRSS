@@ -63,7 +63,7 @@ require_once '../controllers/pages-controller.php';
                             <p class="mb-0 text-center"><i class="fas fa-calendar mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row])->pubDate)) ?></p>
                             <p class="card-text text-center"><?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->description ?>
                             <div class="text-right"><button class="<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>"><a href="<?= $fluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0]->channel->item[$row]->link ?>"
-                                target="_blank" class="text-body h6 mr-1">Read more</a><i class="fas fa-arrow-right"></i> </button></div>
+                                target="_blank" class="text-body h6 mr-1"></a><i class="fas fa-arrow-right"></i> </button></div>
                             </p>
 
                             </div>
