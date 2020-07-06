@@ -140,7 +140,7 @@ require_once 'controllers/index-controller.php';
                     <div class="card m-2 bg-white">
                       <div class="row m-0">
                         <div class="col-2 col-md-1 p-0 align-self-center">
-                          <div class="rounded d-block squareColor <?= $colorFluxRSS[$col] ?>"></div>
+                          <div class="rounded d-block squareColor bg-<?= $colorFluxRSS[$col] ?>"></div>
                         </div>
                         <div class="col p-0 align-self-center">
                           <p class="card-title textcolor-dark m-0 p-0">
@@ -162,7 +162,7 @@ require_once 'controllers/index-controller.php';
                     <div class="modal-dialog">
                       <div class="modal-content rounded">
                         <div class="modal-header d-block p-0 text-center">
-                          <div class="<?= $colorFluxRSS[$col] ?> shadow">
+                          <div class="bg-<?= $colorFluxRSS[$col] ?> shadow">
                             <h2 class="card-header-title textcolor-dark font-weight-bold mb-3"><?= $titleFluxRSS[$col] ?></h2>
                             <p class="mb-0 textcolor-dark"><i class="fas fa-calendar  mr-2"></i><?= strftime('%d/%m/%y à %Hh%M', strtotime(($fluxRSS[$col]->channel->item[$row])->pubDate)) ?></p>
                           </div>
@@ -179,7 +179,7 @@ require_once 'controllers/index-controller.php';
                             <h5 class="waves-effect waves-light text-dark">Fermer</h5>
                           </a>
                           <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
-                            <h5 class="waves-effect waves-light">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
+                            <h5 class="waves-effect waves-light text-<?= $colorFluxRSS[$col] ?>">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                           </a>
 
                         </div>
