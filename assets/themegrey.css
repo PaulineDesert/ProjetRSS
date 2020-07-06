@@ -1,11 +1,12 @@
 .color-dark{
-    background-color: rgb(56, 56, 56);
-    color: rgb(185, 185, 185);
+    background: rgb(28,28,28);
+background: linear-gradient(45deg, rgba(28,28,28,1) 0%, rgba(80,80,80,1) 50%, rgba(52,52,52,1) 100%);
+    color: rgb(221, 221, 221);
 }
 .color-light{
-    background-color: rgb(185, 185, 185);
-    color: rgb(56, 56, 56);
+    background-color: rgb(221, 221, 221);
+    color: rgb(48, 48, 48);
 }
 .textcolor-dark{
-    color: rgb(56, 56, 56);
+    color: rgb(41, 41, 41);
 }
