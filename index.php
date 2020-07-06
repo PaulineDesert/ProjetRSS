@@ -22,7 +22,6 @@ var_dump($_POST);
   <link rel="stylesheet"
     href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
 
-</head>
 
 <body>
   <!-- =========================================== header -->
@@ -155,13 +154,13 @@ if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container-fluid">
       <div class="row text-center">
         <div class="col-sm color-dark mx-2 p-0">
-          <h2><?= $titleFluxRSS[0] ?></h2>
+          <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie1']] ?></h2>
         </div>
         <div class="col-sm color-dark mx-2 p-0">
-          <h2><?= $titleFluxRSS[1] ?></h2>
+          <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie2']] ?></h2>
         </div>
         <div class="col-sm color-dark mx-2 p-0">
-          <h2><?= $titleFluxRSS[2] ?></h2>
+          <h2><?= $titleFluxRSS[$_COOKIE['subjectCookie3']] ?></h2>
         </div>
       </div>
 
