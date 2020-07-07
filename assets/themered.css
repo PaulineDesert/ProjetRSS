@@ -8,20 +8,16 @@
     background-color: rgb(255, 221, 221);
     color: rgb(41, 9, 14);
 }
-
 .textcolor-dark {
     color: rgb(41, 9, 14);
 }
-
 .titleColor {
     color: rgb(255, 221, 221);
     ;
 }
-
 .btn-Color {
     border: solid 1px rgb(41, 9, 14);
 }
-
 .btn-Color:hover {
     background-color: rgb(255, 190, 190);
 }

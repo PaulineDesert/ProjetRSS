@@ -18,7 +18,6 @@ require_once '../controllers/pages-controller.php';
     <link rel="stylesheet"
         href="../assets/theme<?= isset($_POST['colors'])?$_POST['colors']:(isset($_COOKIE['colorsCookie'])?$_COOKIE['colorsCookie']:'grey') ?>.css">
 <body>
-    <!-- =========================================== header -->
     <header class="container-fluid" id="img-accueil">
         <div class="row justify-content-center text-center">
             <div class="col-12 py-5">
@@ -26,7 +25,6 @@ require_once '../controllers/pages-controller.php';
             </div>
         </div>
     </header>
-    <!-- =========================================== navbar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +50,6 @@ require_once '../controllers/pages-controller.php';
     <?php
         for ($row = 0; $row < count($fluxRSS[(isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0)]->channel->item); $row++) {
     ?>
-
             <div class="card mb-3">
                 <div class="row no-gutters">
                     <div class="col-md-1 bg-<?= $colorFluxRSS[isset($_GET['subjectCookie'])?$_GET['subjectCookie']:0] ?>">
@@ -68,13 +65,12 @@ require_once '../controllers/pages-controller.php';
 
                             </div>
                         </div>
-                    </div>
+                    </div>  
                 </div>
             <?php
             }
         ?>
       </div>
-
         <footer class="container-fluid color-dark text-white">
             <div class="container">
                 <div class="row justify-content-center text-center py-3">

@@ -17,7 +17,6 @@ require_once 'controllers/index-controller.php';
   <link rel="stylesheet" href="../assets/theme<?= isset($_POST['colors']) ? $_POST['colors'] : (isset($_COOKIE['colorsCookie']) ? $_COOKIE['colorsCookie'] : 'grey') ?>.css">
 
 <body>
-  <!-- =========================================== header -->
   <header class="container-fluid" id="img-accueil">
     <div class="row justify-content-center text-center">
       <div class="col-12 py-5">
@@ -25,7 +24,6 @@ require_once 'controllers/index-controller.php';
       </div>
     </div>
   </header>
-  <!-- =========================================== navbar -->
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark color-dark ">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -50,7 +48,6 @@ require_once 'controllers/index-controller.php';
       </form>
     </div>
   </nav>
-  <!-- =========================================== main -->
   <main class="color-light  py-4">
     <?php
     if (isset($_POST['gear']) || $_SERVER["REQUEST_METHOD"] == "POST") {
@@ -120,7 +117,6 @@ require_once 'controllers/index-controller.php';
     } else if ($starterCookie == false) {
       $starterCookie = true;
     ?>
-
       <div class="container-fluid">
         <div class="row text-center">
 
@@ -128,7 +124,6 @@ require_once 'controllers/index-controller.php';
           for ($col = 0; $col < 3; $col++) {
             $article = $col + 1;
           ?>
-
             <div class="col-lg rounded shadow color-dark m-2 py-2 px-0">
               <h2 class="font-weight-bold"><?= $titleFluxRSS[$col] ?></h2>
               <div class="row mx-2">
@@ -158,7 +153,6 @@ require_once 'controllers/index-controller.php';
                       </div>
                     </div>
                   </div>
-                  <!-- Modal -->
                   <div class="modal fade" id="<?= 'id' . $col . $row ?>" tabindex="-1" role="dialog" aria-labelledby="<?= 'id' . $col . $row ?>" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content rounded">
@@ -169,7 +163,6 @@ require_once 'controllers/index-controller.php';
                           </div>
                         </div>
                         <div class="modal-body textcolor-dark text-center">
-                          <!-- Text -->
                           <p class="font-weight-bold">
                             <?= $fluxRSS[$col]->channel->item[$row]->title ?></p>
                           <p class="card-text">
@@ -182,7 +175,6 @@ require_once 'controllers/index-controller.php';
                           <a href="<?= $fluxRSS[$col]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
                             <h5 class="waves-effect waves-light">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                           </a>
-
                         </div>
                       </div>
                     </div>
@@ -207,11 +199,9 @@ require_once 'controllers/index-controller.php';
           for ($col = 0; $col < 3; $col++) {
             $article = $col + 1;
           ?>
-
             <div class="col-lg rounded shadow color-dark m-2 py-2 px-0">
               <h2 class="font-weight-bold"><?= $titleFluxRSS[$_COOKIE['subjectCookie' . $article]] ?></h2>
               <div class="row mx-2">
-
                 <?php
                 for ($row = 0; $row < $numberArticles; $row++) {
                 ?>
@@ -224,7 +214,6 @@ require_once 'controllers/index-controller.php';
                         <div class="col-10 col-sm-10 row p-0 align-self-center">
                           <p class="col-12 col-sm-10 card-title textcolor-dark m-0 p-0">
                             <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->title ?></p>
-
                           <div class="col-5 col-sm-1 p-0 pb-2 align-self-center">
                             <img src="assets/img/loup.svg" class="imgWidth" alt="Voir plus" title="Voir plus" data-toggle="modal" data-target="#<?= 'id' . $col . $row ?>">
                           </div>
@@ -237,7 +226,6 @@ require_once 'controllers/index-controller.php';
                       </div>
                     </div>
                   </div>
-                  <!-- Modal -->
                   <div class="modal fade" id="<?= 'id' . $col . $row ?>" tabindex="-1" role="dialog" aria-labelledby="<?= 'id' . $col . $row ?>" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content rounded">
@@ -248,7 +236,6 @@ require_once 'controllers/index-controller.php';
                           </div>
                         </div>
                         <div class="modal-body textcolor-dark text-center">
-                          <!-- Text -->
                           <p class="font-weight-bold">
                             <?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->title ?></p>
                           <p class="card-text">
@@ -261,7 +248,6 @@ require_once 'controllers/index-controller.php';
                           <a href="<?= $fluxRSS[$_COOKIE['subjectCookie' . $article]]->channel->item[$row]->link ?>" target="_blank" class="orange-text d-flex flex-row-reverse p-2">
                             <h5 class="waves-effect waves-light">Article complet<i class="fas fa-angle-double-right ml-2"></i></h5>
                           </a>
-
                         </div>
                       </div>
                     </div>
@@ -279,7 +265,6 @@ require_once 'controllers/index-controller.php';
 
     <?php } ?>
   </main>
-  <!-- =========================================== footer -->
   <footer class="container-fluid color-dark text-white">
     <div class="container">
       <div class="row justify-content-center text-center py-3">
